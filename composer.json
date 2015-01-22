@@ -1,0 +1,19 @@
+{
+    "name": "xerkus/blog",
+    "description": "Sculpin source for my blog",
+    "authors": [
+        {
+            "name": "Aleksey Khudyakov",
+            "email": "aleksey@xerkus.pro"
+        }
+    ],
+    "require": {
+        "sculpin/sculpin": "~2.0",
+        "dflydev/embedded-composer-console": "dev-master",
+        "dflydev/embedded-composer-core": "dev-master",
+        "composer/composer": "dev-master"
+    },
+    "config": {
+        "preferred-install": "dist"
+    }
+}
