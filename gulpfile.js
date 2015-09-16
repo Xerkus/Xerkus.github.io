@@ -7,8 +7,8 @@ var gulp         = require('gulp'),
     runSequence  = require('run-sequence'),
     childProcess = require('child_process'),
     ghPages      = require('gulp-gh-pages'),
-    gutil        = require('gulp-util'),
-    shell        = require('gulp-shell');
+    bower        = require('gulp-bower'),
+    gutil        = require('gulp-util');
 
 var requiredBranch = 'sculpin';
 var deployBranch = 'master';
@@ -19,9 +19,21 @@ gulp.task('default', function(cb) {
 
 gulp.task('install', ['composer', 'bower']);
 
-gulp.task('composer', shell.task('composer install --ansi',{quiet: true}));
+gulp.task('composer', function(cb) {
+    childProcess.exec(
+        'composer install --ansi',
+        function(err, stdout, stderr) {
+            if (err) {
+                err = new gutil.PluginError('task:composer', err);
+            }
+            cb(err);
+        }
+    );
+});
 
-gulp.task('bower', shell.task('bower install', {quiet: true}));
+gulp.task('bower', function() {
+    return bower();
+});
 
 gulp.task('build', function(cb) {
     runSequence('clean', 'build:sculpin', cb);
@@ -36,8 +48,7 @@ gulp.task('build:sculpin', function(cb) {
         './vendor/bin/sculpin generate --env=prod',
         function(err, stdout, stderr) {
             if (err) {
-                console.log(stdout);
-                console.log(stderr);
+                err = new gutil.PluginError('task:build:sculpin', err);
             }
             cb(err);
         }
@@ -49,8 +60,7 @@ gulp.task('build:sculpin:dev', function(cb) {
         './vendor/bin/sculpin generate --env=dev',
         function(err, stdout, stderr) {
             if (err) {
-                console.log(stdout);
-                console.log(stderr);
+                err = new gutil.PluginError('task:build:sculpin:dev', err);
             }
             cb(err);
         }
@@ -70,7 +80,6 @@ gulp.task('watch:sculpin', function(cb) {
     var interrupt = function() {
         console.log("\nStopping sculpin server");
         sculpin.kill('SIGINT');
-        //event.stopPropagation();
     }
     // i wonder if this actually overrides legit listeners
     process.once('SIGINT', interrupt);

@@ -1,5 +1,5 @@
 /.publish/
-/vendor/
-/output_*/
-/assets/vendor/bower_components/
+/assets/bower_components/
 /node_modules/
+/output_*/
+/vendor/
