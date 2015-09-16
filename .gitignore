@@ -1,3 +1,5 @@
+/.publish/
 /vendor/
 /output_*/
-/gh-pages-deployment/
+/assets/vendor/bower_components/
+/node_modules/

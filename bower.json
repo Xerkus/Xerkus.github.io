@@ -1,0 +1,7 @@
+{
+  "name": "xerkus-blog",
+  "dependencies": {
+    "jquery": "~2.1.0",
+    "bootstrap": "4.0.0-alpha"
+  }
+}
