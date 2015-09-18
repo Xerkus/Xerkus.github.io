@@ -8,7 +8,8 @@ var gulp         = require('gulp'),
     childProcess = require('child_process'),
     ghPages      = require('gulp-gh-pages'),
     bower        = require('gulp-bower'),
-    gutil        = require('gulp-util');
+    gutil        = require('gulp-util'),
+    sass         = require('gulp-sass');
 
 var requiredBranch = 'sculpin';
 var deployBranch = 'master';
@@ -36,14 +37,14 @@ gulp.task('bower', function() {
 });
 
 gulp.task('build', function(cb) {
-    runSequence('clean', 'build:sculpin', cb);
+    runSequence('clean', ['sass', 'js'], 'sculpin', cb);
 });
 
 gulp.task('build:dev', function(cb) {
-    runSequence('clean', 'build:sculpin:dev', cb);
+    runSequence('clean', ['sass', 'js'], 'sculpin:dev', cb);
 });
 
-gulp.task('build:sculpin', function(cb) {
+gulp.task('sculpin', function(cb) {
     childProcess.exec(
         './vendor/bin/sculpin generate --env=prod',
         function(err, stdout, stderr) {
@@ -55,7 +56,27 @@ gulp.task('build:sculpin', function(cb) {
     );
 });
 
-gulp.task('build:sculpin:dev', function(cb) {
+gulp.task('sass', function() {
+    return gulp.src('assets/scss/**/*.scss')
+        .pipe(sass({
+            errLogToConsole: true,
+            includePaths: [
+                'assets/bower_components',
+            ]
+        }))
+        .pipe(gulp.dest('source/css'));
+});
+
+gulp.task('js', function() {
+    return gulp.src([
+            'assets/bower_components/jquery/dist/jquery.js',
+            'assets/bower_components/bootstrap/dist/js/bootstrap.js',
+            'assets/js/**/*.js'
+        ])
+        .pipe(gulp.dest('source/js'));
+});
+
+gulp.task('sculpin:dev', function(cb) {
     childProcess.exec(
         './vendor/bin/sculpin generate --env=dev',
         function(err, stdout, stderr) {
@@ -67,7 +88,7 @@ gulp.task('build:sculpin:dev', function(cb) {
     );
 });
 
-gulp.task('watch', ['watch:sculpin']);
+gulp.task('watch', ['watch:sass', 'watch:sculpin']);
 
 gulp.task('watch:sculpin', function(cb) {
     var sculpin = childProcess.spawn(
@@ -88,6 +109,10 @@ gulp.task('watch:sculpin', function(cb) {
         cb(code === 0 || signal === 'SIGINT' ? null : 'Sculpin exited with code: ' + code);
     })
 
+});
+
+gulp.task('watch:sass', function() {
+    return gulp.watch('assets/scss/**/*.scss', ['sass']);
 });
 
 gulp.task('deploy', ['deploy:guard', 'build'], function(cb) {
@@ -129,7 +154,7 @@ gulp.task('deploy:guard', function(cb) {
     );
 });
 
-gulp.task('clean', function() {
+gulp.task('clean:all', function() {
     return del([
         './.publish/',
         './source/css/',
@@ -139,3 +164,11 @@ gulp.task('clean', function() {
     ]);
 });
 
+gulp.task('clean', function() {
+    return del([
+        './.publish/',
+        './source/css/',
+        './source/js/',
+        './output_prod/',
+    ]);
+});
