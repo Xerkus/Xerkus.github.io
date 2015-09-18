@@ -8,8 +8,10 @@ var gulp         = require('gulp'),
     childProcess = require('child_process'),
     ghPages      = require('gulp-gh-pages'),
     bower        = require('gulp-bower'),
+    rename       = require('gulp-rename'),
     gutil        = require('gulp-util'),
-    sass         = require('gulp-sass');
+    sass         = require('gulp-sass'),
+    merge        = require('merge-stream');
 
 var requiredBranch = 'sculpin';
 var deployBranch = 'master';
@@ -68,11 +70,20 @@ gulp.task('sass', function() {
 });
 
 gulp.task('js', function() {
-    return gulp.src([
-            'assets/bower_components/jquery/dist/jquery.js',
-            'assets/bower_components/bootstrap/dist/js/bootstrap.js',
-            'assets/js/**/*.js'
-        ])
+    var bower = gulp.src(
+            [
+                'assets/bower_components/jquery/dist/jquery.js',
+                'assets/bower_components/bootstrap/dist/js/bootstrap.js',
+            ],
+            {base: 'assets/bower_components'}
+        )
+        .pipe(rename(function(path) {
+            path.dirname = path.dirname.split('/')[0];
+        }));
+
+    var assets =  gulp.src(['assets/js/**/*.js']);
+
+    return merge(bower, assets)
         .pipe(gulp.dest('source/js'));
 });
 
