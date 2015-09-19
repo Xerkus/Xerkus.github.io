@@ -1,7 +1,9 @@
 {
   "name": "xerkus-blog",
   "dependencies": {
-    "jquery": "~2.1.0",
-    "bootstrap": "4.0.0-alpha"
+    "bootstrap": "v4-dev",
+    "font-awesome": "fontawesome#~4.4.0",
+    "highlightjs": "~8.8.0",
+    "jquery": "~2.1.0"
   }
 }

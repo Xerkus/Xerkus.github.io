@@ -39,11 +39,11 @@ gulp.task('bower', function() {
 });
 
 gulp.task('build', function(cb) {
-    runSequence('clean', ['sass', 'js'], 'sculpin', cb);
+    runSequence('clean', ['sass', 'js', 'assets'], 'sculpin', cb);
 });
 
 gulp.task('build:dev', function(cb) {
-    runSequence('clean', ['sass', 'js'], 'sculpin:dev', cb);
+    runSequence('clean:all', ['sass', 'js', 'assets'], 'sculpin:dev', cb);
 });
 
 gulp.task('sculpin', function(cb) {
@@ -66,25 +66,28 @@ gulp.task('sass', function() {
                 'assets/bower_components',
             ]
         }))
-        .pipe(gulp.dest('source/css'));
+        .pipe(gulp.dest('source/assets/css'));
 });
 
 gulp.task('js', function() {
+    return  gulp.src(['assets/js/**/*.js'])
+        .pipe(gulp.dest('source/assets/js'));
+});
+
+// assets that don't need processing
+gulp.task('assets', function() {
     var bower = gulp.src(
             [
-                'assets/bower_components/jquery/dist/jquery.js',
-                'assets/bower_components/bootstrap/dist/js/bootstrap.js',
+                'assets/bower_components/bootstrap/dist/js/*.js',
+                'assets/bower_components/font-awesome/fonts/*',
+                'assets/bower_components/highlightjs/*.js',
+                'assets/bower_components/jquery/dist/*.js',
             ],
             {base: 'assets/bower_components'}
         )
-        .pipe(rename(function(path) {
-            path.dirname = path.dirname.split('/')[0];
-        }));
+        .pipe(gulp.dest('source/assets/components'));
 
-    var assets =  gulp.src(['assets/js/**/*.js']);
-
-    return merge(bower, assets)
-        .pipe(gulp.dest('source/js'));
+    return bower;
 });
 
 gulp.task('sculpin:dev', function(cb) {
@@ -108,6 +111,7 @@ gulp.task('watch:sculpin', function(cb) {
         {stdio: ['ignore', process.stdout, process.stderr]}
     );
 
+    // add sculpin start error
     // just for fun
     var interrupt = function() {
         console.log("\nStopping sculpin server");
@@ -165,21 +169,16 @@ gulp.task('deploy:guard', function(cb) {
     );
 });
 
-gulp.task('clean:all', function() {
+gulp.task('clean:all', ['clean'], function() {
     return del([
-        './.publish/',
-        './source/css/',
-        './source/js/',
         './output_dev/',
-        './output_prod/',
     ]);
 });
 
 gulp.task('clean', function() {
     return del([
-        './.publish/',
-        './source/css/',
-        './source/js/',
-        './output_prod/',
+        '.publish/',
+        'source/assets/',
+        'output_prod/',
     ]);
 });
