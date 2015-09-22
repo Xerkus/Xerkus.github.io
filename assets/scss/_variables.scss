@@ -44,7 +44,7 @@ $brand-danger:              #ee5f5b !default;
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-flex:               false !default;
+$enable-flex:               true !default;
 $enable-rounded:            true !default;
 $enable-shadows:            false !default;
 $enable-gradients:          false !default;
@@ -75,7 +75,7 @@ $body-color:                 #c8c8c8 !default;
 //
 // Style anchor elements.
 
-$link-color:                 $brand-primary !default;
+$link-color:                 #fff !default;
 $link-hover-color:           darken($link-color, 15%) !default;
 $link-hover-decoration:      underline !default;
 
@@ -123,7 +123,7 @@ $grid-gutter-width:          1.875rem !default; // 30px
 //
 // Font, line-height, and color for body text, headings, and more.
 
-$font-family-sans-serif:     "Helvetica Neue", Helvetica, Arial, sans-serif !default;
+$font-family-sans-serif:     "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif !default;
 $font-family-serif:          Georgia, "Times New Roman", Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, "Courier New", monospace !default;
 $font-family-base:           $font-family-sans-serif !default;

@@ -1,0 +1,6 @@
+---
+sculpin:
+  permalink: none
+sculpin_content_types:
+  posts:
+    permalink: blog/:filename/
