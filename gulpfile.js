@@ -111,19 +111,23 @@ gulp.task('watch:sculpin', function(cb) {
         {stdio: ['ignore', process.stdout, process.stderr]}
     );
 
-    // add sculpin start error
-    // just for fun
     var interrupt = function() {
         console.log("\nStopping sculpin server");
         sculpin.kill('SIGINT');
+        interrupt = function() {};
     }
-    // i wonder if this actually overrides legit listeners
-    process.once('SIGINT', interrupt);
-    sculpin.on('exit', function(code, signal) {
-        // i should probably check and detach interrupt listener here
-        cb(code === 0 || signal === 'SIGINT' ? null : 'Sculpin exited with code: ' + code);
-    })
 
+    // i wonder if this actually overrides legit listeners
+    process.once('SIGINT', interrupt)
+    //on exit stop sculpin process
+        .once('exit', interrupt);
+
+    var childhandler = function(code, signal) {
+        cb(code === 0 || signal === 'SIGINT' ? null : 'Sculpin exited with code: ' + code);
+        childhandler = interrupt = function(){};
+    };
+    sculpin.on('exit', childhandler)
+        .on('error', childhandler);
 });
 
 gulp.task('watch:sass', function() {
