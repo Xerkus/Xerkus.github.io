@@ -15,17 +15,27 @@
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" />
   </head>
   <body>
-    <header>
-      <div class="container p-y-lg">
-        <h1>Xerkus' opinionated ranting ground</h1>
-        <p class="small text-muted">
-          Thread carefully, your sanity is at stake.
-        </p>
-      </div>
-    </header>
-
     <div class="container">
-      {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+      <header class="p-y-md">
+        <div class="row">
+        <div class="col-lg-9">
+          <h1 class="m-t-md">Xerkus' opinionated ranting ground</h1>
+          <p class="small text-muted">
+            Thread carefully, your sanity is at stake.
+          </p>
+        </div>
+        <div class="col-lg-3 col-xs-12">
+            <a href="#"><i class="fa fa-fw fa-twitter"></i> Twitter</a><br />
+            <a href="#"><i class="fa fa-fw fa-github"></i> Github</a><br />
+            <a href="#"><i class="fa fa-fw fa-stack-overflow"></i> Stack Overflow Carreers</a><br />
+            <a href="#"><i class="fa fa-fw fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+      </header>
+
+      <div class="container">
+        {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+      </div>
     </div>
 
     {% if site.google_analytics_tracking_id %}

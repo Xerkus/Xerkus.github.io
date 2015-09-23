@@ -13,3 +13,21 @@
     color: #315261;
     font-family: "Source Sans Pro";
 }
+
+.overview {
+    @extend .m-b-md;
+}
+
+.blogpost {
+    padding-left: 7rem;
+
+    .btn-back {
+        @include pull-left();
+        margin-top: 2rem;
+        margin-left: -7rem;
+    }
+
+    >h1 {
+        @extend .m-b-md;
+    }
+}
