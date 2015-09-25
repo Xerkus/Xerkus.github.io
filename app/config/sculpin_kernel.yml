@@ -1,6 +1,6 @@
 ---
 sculpin:
-  permalink: none
+  permalink: pretty
 sculpin_content_types:
   posts:
     permalink: blog/:filename/
