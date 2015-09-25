@@ -1,0 +1,44 @@
+---
+layout: default
+title: Xerkus' blog - Who let him out?!
+generator: pagination
+pagination:
+    max_per_page: 10
+use:
+    - posts
+---
+{% for post in page.pagination.items %}
+<article class="overview">
+  <h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+  {% if page.subtitle %}<br /><span class="text-muted">{{ page.subtitle }}</span>{% endif %}</h1>
+  {% if post.summary %}
+  <p>
+    {{ post.summary }}
+  </p>
+  {% endif %}
+  <footer>
+    <div class="span2">
+      <time datetime="{{ post.date|date("Y-m-d") }}">
+        <i class="fa fa-calendar"></i> {{ post.date|date("Y-m-d") }}
+      </time>
+    </div>
+    {% if post.meta.tags %}
+    <div class="span8">
+      <small class="tags">
+        <i class="icon-tag"></i>
+        {% for tag in post.meta.tags %}
+        <a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
+        {% endfor %}
+      </small>
+    </div>
+    {% endif %}
+  </footer>
+</article>
+{% endfor %}
+{% if page.pagination.previous_page or page.pagination.next_page %}
+<div>
+  {% if page.pagination.previous_page %}<a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts</a>{% endif %}<br />
+  {% if page.pagination.next_page %}<a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older Posts</a>{% endif %}<br />
+</div>
+{% endif %}
+
