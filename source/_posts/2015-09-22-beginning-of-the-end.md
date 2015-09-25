@@ -21,8 +21,8 @@ no practice it is all in vain. The fact that english is not my native language
 does not help either. Great news are there is nothing that can't be improved
 with some practice. So this is it: my ranting grounds are officially open.
 
-I did not decide on the design yet. I think I will leave it as is. I can slowly
-tweak layout and styles over next couple months while I focus on content first.
-Some familiar grounds will be nice to begin with, I suppose. Simple
-tutorial maybe?
+I did not decide on the design yet. I think I will leave it as is for now. I
+can slowly tweak layout and styles over next couple months while I focus on
+content first.  Some familiar grounds will be nice to begin with, I suppose.
+Simple tutorial maybe?
 
