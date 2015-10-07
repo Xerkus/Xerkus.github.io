@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On the matter of immutables</title>
+    
+    <link rel="canonical" href="http://blog.xerkus.pro/blog/on-the-matter-of-immutables" />
+    <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Xerkus&#x27;&#x20;blog activity feed" />
+
+    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="p-y-md">
+        <div class="row">
+        <div class="col-lg-9">
+          <h1 class="m-t-md">Xerkus' opinionated ranting ground</h1>
+          <p class="small text-muted">
+            Thread carefully, your sanity is at stake.
+          </p>
+        </div>
+        <div class="col-lg-3 col-xs-12">
+            <a href="https://twitter.com/xerkus"><i class="fa fa-fw fa-twitter"></i> Twitter</a><br />
+            <a href="https://github.com/Xerkus"><i class="fa fa-fw fa-github"></i> Github</a><br />
+            <a href="https://github.com/xerkus"><i class="fa fa-fw fa-stack-overflow"></i> Stack Overflow Carreers</a><br />
+            <a href="https://www.linkedin.com/in/xerkus"><i class="fa fa-fw fa-linkedin"></i> LinkedIn</a>
+        </div>
+      </div>
+      </header>
+
+      <div class="container">
+        <article class="blogpost">
+  <a class="btn btn-back btn-primary" href="/blog"><i class="fa fa-arrow-left"></i> Back</a>
+  <h1>On the matter of immutables
+      </h1>
+  <div>
+    <p>Yesterday I was asked to give feedback on some issue related to handling
+immutable object. It felt counterintuitive but author couldn't put his finger
+on what exactly was wrong. Issue was more architectural and on a broader scale but i
+want to focus on immutable part of it.</p>
+
+<p>Immutability concept is old but recently it got spike of popularity in web development.
+It spurred less experienced developers to try and apply it without understanding fully
+its upsides and downsides. Frankly, that is not that bad on itself,
+it is the normal process of learning if only it was a bit less eager.</p>
+
+<h2>So, immutability, what is it about?</h2>
+
+<p>Immutability is an assurance that the object you have will not be unexpectedly
+changed elsewhere. It opens a way for safe sharing of objects. It might not
+look like that much of an issue, but don't underestimate it! Subtle
+inconsistent bugs are extremely hard to debug and can lead to devastating
+consequences.</p>
+
+<h2>When immutability is applicable?</h2>
+
+<p>As an adept of It Depends Driven Development, i would say that context of the
+object is the ultimate guide.</p>
+
+<p>Lets look at the more practical aspects:</p>
+
+<aside class="aside-note rule-of-thumb">
+<p>Value Objects are natural candidates for immutability.</p>
+</aside>
+
+<p>If changing state of the object changes its identity - it is a strong candidate
+for immutability. Indeed, should you change street in address, it will be
+different address and that correlates well with producing new object for new
+value.</p>
+
+<aside class="aside-note rule-of-thumb">
+<p>Do not apply immutability if previous state is immediately invalidated upon
+change.</p>
+</aside>
+
+<p>Conversely if user changes his username or email, he stays the same user.
+Producing new object will result in two states, one valid and one is not.
+Some might wonder how that corresponds with user</p>
+
+  </div>
+          <p class="tags">
+      Tags:
+            <a href="/blog/tags/oop">oop</a>,             <a href="/blog/tags/immutability">immutability</a>,             <a href="/blog/tags/published-draft">published-draft</a>            </p>
+  
+        <nav class="article">
+          <ul>
+                                              <li>Previous: <a class="previous" href="/blog/beginning-of-the-end" title="Starting blogging, finally"><span class="title">Starting blogging, finally</span></a></li>
+                        </ul>
+      </nav>
+  </article>
+      </div>
+    </div>
+
+    
+    <script src="/assets/components/jquery/dist/jquery.js"></script>
+    <script src="/assets/components/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/assets/components/highlightjs/highlight.pack.js"></script>
+  </body>
+</html>
+

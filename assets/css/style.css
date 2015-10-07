@@ -6879,8 +6879,14 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   font-family: "Source Sans Pro"; }
 
 .blogpost {
-  padding-left: 7rem; }
+  padding-left: 13rem;
+  margin-right: 10rem; }
   .blogpost .btn-back {
     float: left !important;
     margin-top: 2rem;
-    margin-left: -7rem; }
+    margin-left: -13rem; }
+  .blogpost .aside-note {
+    float: left !important;
+    margin-left: -13rem;
+    width: 12.3rem;
+    font-size: 0.9rem; }
