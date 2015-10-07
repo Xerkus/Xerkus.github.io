@@ -19,15 +19,23 @@
 }
 
 .blogpost {
-    padding-left: 7rem;
+    padding-left: 13rem;
+    margin-right: 10rem;
 
     .btn-back {
         @include pull-left();
         margin-top: 2rem;
-        margin-left: -7rem;
+        margin-left: -13rem;
     }
 
     >h1 {
         @extend .m-b-md;
+    }
+
+    .aside-note {
+        @include pull-left();
+        margin-left: -13rem;
+        width: 12.3rem;
+        font-size: 0.9rem;
     }
 }
