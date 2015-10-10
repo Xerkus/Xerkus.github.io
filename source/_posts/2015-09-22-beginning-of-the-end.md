@@ -26,3 +26,7 @@ can slowly tweak layout and styles over next couple months while I focus on
 content first.  Some familiar grounds will be nice to begin with, I suppose.
 Simple tutorial maybe?
 
+Upd: I started tagging some of the posts with 'published-draft'. Those are the
+posts I want to share but they do not reflect my opinion precisely or fully. I
+am going to revisit those as my writing skills improve.
+
