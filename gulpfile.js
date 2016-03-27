@@ -6,56 +6,26 @@ var gulp         = require('gulp'),
     del          = require('del'),
     runSequence  = require('run-sequence'),
     childProcess = require('child_process'),
-    ghPages      = require('gulp-gh-pages'),
     bower        = require('gulp-bower'),
     rename       = require('gulp-rename'),
     gutil        = require('gulp-util'),
     sass         = require('gulp-sass'),
     merge        = require('merge-stream');
 
-var requiredBranch = 'sculpin';
-var deployBranch = 'master';
+var bowerComponentsPath = 'assets/bower_components';
 
-gulp.task('default', function(cb) {
-    runSequence(['install', 'clean'], ['build:dev'], cb);
-});
-
-gulp.task('install', ['composer', 'bower']);
-
-gulp.task('composer', function(cb) {
-    childProcess.exec(
-        'composer install --ansi',
-        function(err, stdout, stderr) {
-            if (err) {
-                err = new gutil.PluginError('task:composer', err);
-            }
-            cb(err);
-        }
-    );
-});
+gulp.task('default');
 
 gulp.task('bower', function() {
     return bower();
 });
 
 gulp.task('build', function(cb) {
-    runSequence('clean', ['sass', 'js', 'assets'], 'sculpin', cb);
+    runSequence('clean', ['sass', 'js', 'assets'], cb);
 });
 
 gulp.task('build:dev', function(cb) {
-    runSequence('clean:all', ['sass', 'js', 'assets'], 'sculpin:dev', cb);
-});
-
-gulp.task('sculpin', function(cb) {
-    childProcess.exec(
-        './vendor/bin/sculpin generate --env=prod',
-        function(err, stdout, stderr) {
-            if (err) {
-                err = new gutil.PluginError('task:build:sculpin', err);
-            }
-            cb(err);
-        }
-    );
+    runSequence('clean', ['sass', 'js', 'assets'], cb);
 });
 
 gulp.task('sass', function() {
@@ -63,7 +33,7 @@ gulp.task('sass', function() {
         .pipe(sass({
             errLogToConsole: true,
             includePaths: [
-                'assets/bower_components',
+                bowerComponentsPath,
             ]
         }))
         .pipe(gulp.dest('source/assets/css'));
@@ -83,106 +53,21 @@ gulp.task('assets', function() {
                 'assets/bower_components/highlightjs/*.js',
                 'assets/bower_components/jquery/dist/*.js',
             ],
-            {base: 'assets/bower_components'}
+            {base: bowerComponentsPath}
         )
-        .pipe(gulp.dest('source/assets/components'));
+        .pipe(gulp.dest('source/assets'));
 
     return bower;
 });
 
-gulp.task('sculpin:dev', function(cb) {
-    childProcess.exec(
-        './vendor/bin/sculpin generate --env=dev',
-        function(err, stdout, stderr) {
-            if (err) {
-                err = new gutil.PluginError('task:build:sculpin:dev', err);
-            }
-            cb(err);
-        }
-    );
-});
-
-gulp.task('watch', ['watch:sass', 'watch:sculpin']);
-
-gulp.task('watch:sculpin', function(cb) {
-    var sculpin = childProcess.spawn(
-        './vendor/bin/sculpin',
-        ['generate', '--server', '--watch', '--port=8888'],
-        {stdio: ['ignore', process.stdout, process.stderr]}
-    );
-
-    var interrupt = function() {
-        console.log("\nStopping sculpin server");
-        sculpin.kill('SIGINT');
-        interrupt = function() {};
-    }
-
-    // i wonder if this actually overrides legit listeners
-    process.once('SIGINT', interrupt)
-    //on exit stop sculpin process
-        .once('exit', interrupt);
-
-    var childhandler = function(code, signal) {
-        cb(code === 0 || signal === 'SIGINT' ? null : 'Sculpin exited with code: ' + code);
-        childhandler = interrupt = function(){};
-    };
-    sculpin.on('exit', childhandler)
-        .on('error', childhandler);
-});
+gulp.task('watch', ['watch:sass']);
 
 gulp.task('watch:sass', function() {
     return gulp.watch('assets/scss/**/*.scss', ['sass']);
 });
 
-gulp.task('deploy', ['deploy:guard', 'build'], function(cb) {
-    return gulp.src(['output_prod/**/*.*', 'assets/gh-pages/**'], {dot: true})
-        .pipe(ghPages({
-                branch: deployBranch,
-                message: 'Deploying sculpin-generated pages'
-    }));
-});
-
-gulp.task('deploy:guard', function(cb) {
-    childProcess.exec(
-        'git symbolic-ref -q HEAD 2>/dev/null',
-        [],
-        function(err, stdout, stderr) {
-            if (!err && stdout.trim() !== 'refs/heads/' + requiredBranch) {
-                err = new gutil.PluginError(
-                    'task:deploy:branch_guard',
-                    'Deployment is only allowed from branch "' + requiredBranch + '"'
-                );
-            }
-            if (err) {
-                return cb(err);
-            }
-            childProcess.exec(
-                'git status --porcelain | wc -l',
-                [],
-                function(err, stdout, stderr) {
-                    if (!err && stdout.trim() !== '0') {
-                        err = new gutil.PluginError(
-                            'task:deploy:uncommitted_guard',
-                            'Deployment is only allowed from clean state'
-                        );
-                    }
-                    cb(err);
-                }
-            );
-        }
-    );
-});
-
-gulp.task('clean:all', ['clean'], function() {
-    return del([
-        './output_dev/',
-    ]);
-});
-
 gulp.task('clean', function() {
     return del([
-        '.publish/',
         'source/assets/',
-        'output_prod/',
     ]);
 });
