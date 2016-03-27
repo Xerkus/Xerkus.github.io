@@ -13,6 +13,9 @@ var gulp         = require('gulp'),
 
 var bowerComponentsPath = 'assets/bower_components';
 
+// do not ignore SIGINT as PID 1 while running in docker
+process.once('SIGINT', function() { process.exit(0); })
+
 gulp.task('default');
 
 gulp.task('bower', function() {
