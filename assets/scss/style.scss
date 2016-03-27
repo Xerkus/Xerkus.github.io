@@ -8,12 +8,19 @@
 
 @import "highlightjs/styles/github";
 
-.matthewsetter {
-    background-color: #b4d8d5;
-    color: #315261;
-    font-family: "Source Sans Pro";
+.blog-header {
+  padding-top: map-get(map-get($spacers, 2), y);
+  padding-bottom: map-get(map-get($spacers, 2), y);
+  margin-bottom: $spacer-y;
 }
 
+.blog-title {
+  @include media-breakpoint-up(md) {
+    font-size: 2.5rem;
+  }
+  font-size: 1.75rem;
+  font-weight: normal;
+}       
 .overview {
     @extend .m-b-md;
 }

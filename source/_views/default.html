@@ -15,27 +15,34 @@
     <link type="text/css" rel="stylesheet" href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600,700" />
   </head>
   <body>
-    <div class="container">
-      <header class="p-y-md">
-        <div class="row">
-        <div class="col-lg-9">
-          <h1 class="m-t-md">Xerkus' opinionated ranting ground</h1>
-          <p class="small text-muted">
-            Thread carefully, your sanity is at stake.
-          </p>
-        </div>
-        <div class="col-lg-3 col-xs-12">
-            <a href="https://twitter.com/{{ site.twitter }}"><i class="fa fa-fw fa-twitter"></i> Twitter</a><br />
-            <a href="https://github.com/{{ site.github }}"><i class="fa fa-fw fa-github"></i> Github</a><br />
-            <a href="https://careers.stackoverflow.com/{{ site.socareers }}"><i class="fa fa-fw fa-stack-overflow"></i> Stack Overflow Careers</a><br />
-            <a href="https://www.linkedin.com/in/{{ site.linkedin }}"><i class="fa fa-fw fa-linkedin"></i> LinkedIn</a>
-        </div>
-      </div>
-      </header>
-
+    <header class="blog-header">
       <div class="container">
-        {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
+        <div class="row">
+          <div class="col-lg-9 col-xs-12"">
+            <h1 class="blog-title">Xerkus' opinionated ranting ground</h1>
+            <p class="small text-muted">
+              Thread carefully, your sanity is at stake.
+            </p>
+          </div>
+          <div class="col-lg-3 col-xs-12">
+            <a href="https://twitter.com/{{ site.twitter }}">
+              <i class="fa fa-fw fa-twitter"></i> Twitter
+            </a><br />
+            <a href="https://github.com/{{ site.github }}">
+              <i class="fa fa-fw fa-github"></i> Github
+            </a><br />
+            <a href="https://careers.stackoverflow.com/{{ site.socareers }}">
+              <i class="fa fa-fw fa-stack-overflow"></i> Stack Overflow Careers
+            </a><br />
+            <a href="https://www.linkedin.com/in/{{ site.linkedin }}">
+              <i class="fa fa-fw fa-linkedin"></i> LinkedIn
+            </a>
+          </div>
+        </div>
       </div>
+    </header>
+    <div class="container">
+      {% block content_wrapper %}{% block content %}{% endblock %}{% endblock %}
     </div>
 
     {% if site.google_analytics_tracking_id %}
