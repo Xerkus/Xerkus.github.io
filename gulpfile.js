@@ -5,7 +5,6 @@
 var gulp         = require('gulp'),
     del          = require('del'),
     runSequence  = require('run-sequence'),
-    childProcess = require('child_process'),
     bower        = require('gulp-bower'),
     rename       = require('gulp-rename'),
     gutil        = require('gulp-util'),
