@@ -24,17 +24,26 @@ gulp.task('build', function(cb) {
 });
 
 gulp.task('build:dev', function(cb) {
-    runSequence('clean', ['sass', 'js', 'assets'], cb);
+    runSequence('clean', ['sass:dev', 'js', 'assets'], cb);
 });
 
 gulp.task('sass', function() {
     return gulp.src('assets/scss/**/*.scss')
         .pipe(sass({
-            errLogToConsole: true,
             includePaths: [
                 bowerComponentsPath,
             ]
         }))
+        .pipe(gulp.dest('source/assets/css'));
+});
+
+gulp.task('sass:dev', function() {
+    return gulp.src('assets/scss/**/*.scss')
+        .pipe(sass({
+            includePaths: [
+                bowerComponentsPath,
+            ]
+        }).on('error', sass.logError))
         .pipe(gulp.dest('source/assets/css'));
 });
 
@@ -59,10 +68,12 @@ gulp.task('assets', function() {
     return bower;
 });
 
-gulp.task('watch', ['watch:sass']);
+gulp.task('watch', function(cb) {
+    runSequence('build:dev', ['watch:sass'], cb);
+});
 
 gulp.task('watch:sass', function() {
-    return gulp.watch('assets/scss/**/*.scss', ['sass']);
+    return gulp.watch('assets/scss/**/*.scss', ['sass:dev']);
 });
 
 gulp.task('clean', function() {
