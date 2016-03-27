@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "sculpin/sculpin": "~2.0",
+        "sculpin/sculpin": "dev-master",
         "dflydev/embedded-composer-console": "dev-master",
         "dflydev/embedded-composer-core": "dev-master",
         "composer/composer": "dev-master"
