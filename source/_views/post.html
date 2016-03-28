@@ -1,29 +1,15 @@
 {% extends "default" %}
 {% block content_wrapper %}
-<article class="blogpost">
-  <a class="btn btn-back btn-primary" href="/blog"><i class="fa fa-arrow-left"></i> Back</a>
+<article class="blog-post">
   <h1>{{ page.title }}
     {% if page.subtitle %}<br /><span class="text-muted">{{ page.subtitle }}</span>{% endif %}
   </h1>
   <div>
     {{ page.blocks.content|raw }}
   </div>
-  {% if page.categories %}
-      <p class="categories">
-      Categories:
-      {% for category in page.categories %}
-      <a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a>{% if not loop.last %}, {% endif %}
-      {% endfor %}
-      </p>
-  {% endif %}
-  {% if page.tags %}
-      <p class="tags">
-      Tags:
-      {% for tag in page.tags %}
-      <a href="{{ site.url }}/blog/tags/{{ tag|url_encode(true) }}">{{ tag }}</a>{% if not loop.last %}, {% endif %}
-      {% endfor %}
-      </p>
-  {% endif %}
+  <footer class="post-meta">
+    {% include "post_meta" with {post:page} %}
+  </footer>
 
   {% if page.previous_post or page.next_post %}
       <nav class="article">

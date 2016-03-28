@@ -5,7 +5,9 @@ summary: Some thoughts and a bit of practical guide to immutability.
 tags:
   - oop
   - immutability
-  - published-draft
+  - draft
+categories:
+  - coding-practices
 ---
 
 Yesterday I was asked to give feedback on some issue related to handling
@@ -39,7 +41,7 @@ of it, it is the key.
 
 Lets look at the practical applications:
 
-<aside class="aside-note rule-of-thumb">
+<aside class="side-note rule-of-thumb">
 <p>Value Objects are natural candidates for immutability.</p>
 </aside>
 
@@ -58,7 +60,7 @@ yet configured or configuration being ignored since it was modified after
 service was created. Again, producing new service manager with new
 configuration does not invalidate existing service manager.
 
-<aside class="aside-note rule-of-thumb">
+<aside class="side-note rule-of-thumb">
 <p>Do not apply immutability if previous state is immediately invalidated upon
 change.</p>
 </aside>

@@ -25,9 +25,9 @@
     @extend .m-b-md;
 }
 
-.blogpost {
-    padding-left: 13rem;
-    margin-right: 10rem;
+.blog-post {
+    display: flex;
+    flex-direction: column;
 
     .btn-back {
         @include pull-left();
@@ -35,14 +35,44 @@
         margin-left: -13rem;
     }
 
-    >h1 {
-        @extend .m-b-md;
+    .post-header {
+        margin-bottom: $spacer-y;
+        border-bottom: 1px solid $brand-primary;
     }
 
-    .aside-note {
+    h1 {
+        font-size: 2rem;
+    }
+    h2 {
+        font-size: 1.75rem;
+    }
+    h3 {
+        font-size: 1.5rem;
+    }
+    h4 {
+        font-size: 1.25rem;
+    }
+
+    .side-note {
         @include pull-left();
         margin-left: -13rem;
         width: 12.3rem;
         font-size: 0.9rem;
+    }
+    
+    .post-meta {
+        order: -1;
+        .meta-item {
+            float: left;
+            margin-right: $spacer-x;
+        }
+        @clearfix;
+    }
+}
+
+.posts .blog-post {
+    margin-bottom: map-get(map-get($spacers, 3), y);
+    .side-note {
+        display: none;
     }
 }
