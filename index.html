@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Xerkus&#039; blog - Who let him out?!</title>
     
-    <link rel="canonical" href="http://blog.xerkus.pro/" />
+    <link rel="canonical" href="http://blog.xerkus.pro//" />
     <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Xerkus&#x27;&#x20;blog activity feed" />
 
     <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
@@ -22,7 +22,7 @@
             </p>
           </div>
           <div class="col-lg-3 col-xs-12">
-            <a href="/">
+            <a href="/about">
               <i class="fa fa-fw fa-user"></i> About
             </a><br />
             <a href="https://twitter.com/xerkus">
@@ -42,14 +42,17 @@
       </div>
     </header>
     <div class="container">
-      <section class="blog-content row">
-  <div class="posts col-xs-12 col-md-9">
+      <div class="blog-content row">
+  <section class="posts col-xs-12 col-md-9">
   <h2>Latest posts</h2>
 <article class="blog-post">
   <header class="post-header">
     <h1><a href="/blog/on-the-matter-of-immutables">On the matter of immutables</a>
     </h1>
-  </header>
+        <p>
+      Some thoughts and a bit of practical guide to immutability.
+    </p>
+      </header>
   <div>
     <p>Yesterday I was asked to give feedback on some issue related to handling
 immutable object. It felt counterintuitive but author couldn't put his finger
@@ -124,14 +127,17 @@ more sense to create new immutable customer object from user object.</p>
         <a href="/blog/categories/coding-practices">coding-practices</a>    </div>
 <div class="meta-item tags">
     <i class="fa fa-tags"></i>
-        <a href="/blog/tags/oop">oop</a>,         <a href="/blog/tags/immutability">immutability</a>,         <a href="/blog/tags/draft">draft</a>    </div>
+        <a href="/blog/tags/OOP">OOP</a>,         <a href="/blog/tags/immutability">immutability</a>,         <a href="/blog/tags/draft">draft</a>    </div>
   </footer>
 </article>
 <article class="blog-post">
   <header class="post-header">
     <h1><a href="/blog/beginning-of-the-end">Starting blogging, finally</a>
     </h1>
-  </header>
+        <p>
+      Hello there my first victim, err... reader.
+    </p>
+      </header>
   <div>
     <p>Hello there.</p>
 
@@ -168,12 +174,44 @@ am going to revisit those as my writing skills improve.</p>
 </div>
   </footer>
 </article>
+   <a style="width: 100%" class="btn btn-secondary" href="/blog">
+     All posts
+   </a>
+  </section>
+  <aside class="sidebar col-xs-12 col-md-3">
+    <article class="card sidebar-about">
+  <div class="card-block">
+    <h2>About</h2>
+    <p>
+      Aleksei Khudiakov is an experienced developer, yada yada, shameless
+      self-appraisal goes here
+    </p>
+    <a href="/about">And even more bragging here</a>
   </div>
-
-<div class="col-xs-12 col-md-3">
-  <a href="/blog">All Posts</a>
-</div>
-</section>    </div>
+</article>
+    <nav class="card sidebar-nav">
+      <div class="card-block">
+        <h2><a href="/blog">All posts</a></h2>
+        <h2><i class="fa fa-folder-o"></i> Categories</h2>
+        <ul class="categories-list">
+                <li><a href="/blog/categories/coding-practices">coding-practices</a></li>
+        </ul>
+        <h2><i class="fa fa-tags"></i> Tags</h2>
+        <div class="tag-cloud">
+    <a class="weight-1" href="/blog/tags/OOP">
+    OOP
+  </a>
+         <a class="weight-1" href="/blog/tags/immutability">
+    immutability
+  </a>
+         <a class="weight-1" href="/blog/tags/draft">
+    draft
+  </a>
+      </div>
+      </div>
+    </nav>
+  </aside>
+</div>    </div>
 
     
     <script src="/assets/jquery/dist/jquery.js"></script>
