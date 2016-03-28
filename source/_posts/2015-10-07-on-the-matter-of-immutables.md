@@ -5,7 +5,7 @@ summary: Some thoughts and a bit of practical guide to immutability.
 tags:
   - OOP
   - immutability
-  - draft
+  - drafts
 categories:
   - coding-practices
 ---
