@@ -14,7 +14,7 @@ use:
 <article class="blog-post">
   <header class="post-header">
     <h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-    {% if page.subtitle %}<br /><span class="text-muted">{{ page.subtitle }}</span>{% endif %}</h1>
+    {% if post.subtitle %}<br /><span class="text-muted">{{ post.subtitle }}</span>{% endif %}</h1>
     {% if post.summary %}
     <p>
       {{ post.summary }}
