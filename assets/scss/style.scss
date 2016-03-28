@@ -8,6 +8,8 @@
 
 @import "highlightjs/styles/github";
 
+@import "tag_cloud";
+
 .blog-header {
   padding-top: map-get(map-get($spacers, 2), y);
   padding-bottom: map-get(map-get($spacers, 2), y);
@@ -52,6 +54,9 @@
     h4 {
         font-size: 1.25rem;
     }
+    h5, h6 {
+        font-size: 1rem;
+    }
 
     .side-note {
         @include pull-left();
@@ -70,9 +75,28 @@
     }
 }
 
-.posts .blog-post {
-    margin-bottom: map-get(map-get($spacers, 3), y);
-    .side-note {
-        display: none;
+.posts {
+    margin-bottom: map-get(map-get($spacers, 2), y);
+    .blog-post {
+        margin-bottom: map-get(map-get($spacers, 3), y);
+        .side-note {
+            display: none;
+        }
     }
 }
+
+.sidebar .card {
+    h1 {
+        font-size: 1.75rem;
+    }
+    h2 {
+        font-size: 1.5rem;
+    }
+    h3 {
+        font-size: 1.25rem;
+    }
+    h4, h5, h6 {
+        font-size: 1rem;
+    }
+}
+

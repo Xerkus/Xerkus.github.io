@@ -1,17 +1,25 @@
 ---
 layout: default
 title: Xerkus' blog - Who let him out?!
+generator: [posts_tag_index, posts_category_index]
 use:
     - posts
+    - posts_tags
+    - posts_categories
 ---
-<section class="blog-content row">
-  <div class="posts col-xs-12 col-md-9">
+<div class="blog-content row">
+  <section class="posts col-xs-12 col-md-9">
   <h2>Latest posts</h2>
 {% for post in data.posts|slice(0,2) %}
 <article class="blog-post">
   <header class="post-header">
     <h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
     {% if page.subtitle %}<br /><span class="text-muted">{{ page.subtitle }}</span>{% endif %}</h1>
+    {% if post.summary %}
+    <p>
+      {{ post.summary }}
+    </p>
+    {% endif %}
   </header>
   <div>
     {{ post.blocks.content|raw }}
@@ -21,9 +29,24 @@ use:
   </footer>
 </article>
 {% endfor %}
-  </div>
-
-<div class="col-xs-12 col-md-3">
-  <a href="{{ site.url }}/blog">All Posts</a>
+   <a style="width: 100%" class="btn btn-secondary" href="{{ site.url }}/blog">
+     All posts
+   </a>
+  </section>
+  <aside class="sidebar col-xs-12 col-md-3">
+    {% include "sidebar_about" %}
+    <nav class="card sidebar-nav">
+      <div class="card-block">
+        <h2><a href="{{ site.url }}/blog">All posts</a></h2>
+        <h2><i class="fa fa-folder-o"></i> Categories</h2>
+        <ul class="categories-list">
+        {% for category,posts in data.posts_categories %}
+        <li><a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a></li>
+{% endfor %}
+        </ul>
+        <h2><i class="fa fa-tags"></i> Tags</h2>
+        {% include "tag_cloud" with {posts_tags:data.posts_tags} %}
+      </div>
+    </nav>
+  </aside>
 </div>
-</section>

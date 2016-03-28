@@ -1,0 +1,37 @@
+// depends on bootstrap variable defining base font
+$tag-cloud-font-size: $font-size-base !default;
+
+.tag-cloud {
+    a {
+        display: inline-block;
+        font-size: $tag-cloud-font-size * 2;
+        margin-right: 0.75rem;
+    }
+    .weight-0 {
+        font-size: $tag-cloud-font-size * 0.75;
+    }
+    .weight-1 {
+        font-size: $tag-cloud-font-size * 0.75;
+    }
+    .weight-2 {
+        font-size: $tag-cloud-font-size * 1;
+    }
+    .weight-3 {
+        font-size: $tag-cloud-font-size * 1.25;
+    }
+    .weight-4 {
+        font-size: $tag-cloud-font-size * 1.25;
+    }
+    .weight-5 {
+        font-size: $tag-cloud-font-size * 1.5;
+    }
+    .weight-6 {
+        font-size: $tag-cloud-font-size * 1.5;
+    }
+    .weight-7 {
+        font-size: $tag-cloud-font-size * 1.75;
+    }
+    .weight-8 {
+        font-size: $tag-cloud-font-size * 1.75;
+    }
+}

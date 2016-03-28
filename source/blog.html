@@ -6,31 +6,56 @@ pagination:
     max_per_page: 10
 use:
     - posts
+    - posts_tags
+    - posts_categories
 ---
-<section class="blog-content">
-  <div class="posts">
-{% for post in page.pagination.items %}
-<article class="blog-post overview">
-  <header class="post-header">
-    <h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
-    {% if page.subtitle %}<br /><span class="text-muted">{{ page.subtitle }}</span>{% endif %}</h1>
-  </header>
-  {% if post.summary %}
-  <p>
-    {{ post.summary }}
-  </p>
-  {% endif %}
-  <footer class="post-meta">
-    {% include "post_meta" with {post:post} %}
-  </footer>
-</article>
-{% endfor %}
-  </div>
+<div class="blog-content row">
+  <section class="posts col-xs-12 col-md-9">
+    {% for post in page.pagination.items %}
+    <article class="blog-post overview">
+      <header class="post-header">
+        <h1><a href="{{ site.url }}{{ post.url }}">{{ post.title }}</a>
+        {% if page.subtitle %}<br /><span class="text-muted">{{ page.subtitle }}</span>{% endif %}</h1>
+      </header>
+      {% if post.summary %}
+      <p>
+        {{ post.summary }}
+      </p>
+      {% endif %}
+      <footer class="post-meta">
+        {% include "post_meta" with {post:post} %}
+      </footer>
+    </article>
+    {% endfor %}
 
-{% if page.pagination.previous_page or page.pagination.next_page %}
-<div>
-  {% if page.pagination.previous_page %}<a href="{{ site.url }}{{ page.pagination.previous_page.url }}">Newer Posts</a>{% endif %}<br />
-  {% if page.pagination.next_page %}<a href="{{ site.url }}{{ page.pagination.next_page.url }}">Older Posts</a>{% endif %}<br />
+    {% if page.pagination.previous_page or page.pagination.next_page %}
+    <div>
+      {% if page.pagination.previous_page %}
+       <a class="btn btn-secondary" href="{{ site.url }}{{ page.pagination.previous_page.url }}">
+         <i class="fa fa-angle-double-left"></i> Newer Posts
+       </a>
+       {% endif %}
+      {% if page.pagination.next_page %}
+      <a class="btn btn-secondary pull-right" href="{{ site.url }}{{ page.pagination.next_page.url }}">
+        Older Posts <i class="fa fa-angle-double-right"></i>
+      </a>
+      {% endif %}
+    </div>
+    {% endif %}
+  </section>
+  <aside class="sidebar col-xs-12 col-md-3">
+    {% include "sidebar_about" %}
+    <nav class="card sidebar-nav">
+      <div class="card-block">
+        <h2><i class="fa fa-folder-o"></i> Categories</h2>
+        <ul class="categories-list">
+        {% for category,posts in data.posts_categories %}
+        <li><a href="{{ site.url }}/blog/categories/{{ category|url_encode(true) }}">{{ category }}</a></li>
+{% endfor %}
+        </ul>
+        <h2><i class="fa fa-tags"></i> Tags</h2>
+        {% include "tag_cloud" with {posts_tags:data.posts_tags} %}
+      </div>
+    </nav>
+  </aside>
 </div>
-{% endif %}
-</section>

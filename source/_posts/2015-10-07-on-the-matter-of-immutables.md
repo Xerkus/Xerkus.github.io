@@ -3,7 +3,7 @@ layout: post
 title: On the matter of immutables
 summary: Some thoughts and a bit of practical guide to immutability.
 tags:
-  - oop
+  - OOP
   - immutability
   - draft
 categories:
