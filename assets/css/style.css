@@ -7179,15 +7179,37 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
     .blog-title {
       font-size: 2.5rem; } }
 
-.blogpost {
-  padding-left: 13rem;
-  margin-right: 10rem; }
-  .blogpost .btn-back {
+.blog-post {
+  display: flex;
+  flex-direction: column; }
+  .blog-post .btn-back {
     float: left !important;
     margin-top: 2rem;
     margin-left: -13rem; }
-  .blogpost .aside-note {
+  .blog-post .post-header {
+    margin-bottom: 1rem;
+    border-bottom: 1px solid #7A8288; }
+  .blog-post h1 {
+    font-size: 2rem; }
+  .blog-post h2 {
+    font-size: 1.75rem; }
+  .blog-post h3 {
+    font-size: 1.5rem; }
+  .blog-post h4 {
+    font-size: 1.25rem; }
+  .blog-post .side-note {
     float: left !important;
     margin-left: -13rem;
     width: 12.3rem;
     font-size: 0.9rem; }
+  .blog-post .post-meta {
+    order: -1;
+    @clearfix; }
+    .blog-post .post-meta .meta-item {
+      float: left;
+      margin-right: 1rem; }
+
+.posts .blog-post {
+  margin-bottom: 3rem; }
+  .posts .blog-post .side-note {
+    display: none; }

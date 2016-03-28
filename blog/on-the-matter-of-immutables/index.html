@@ -22,6 +22,9 @@
             </p>
           </div>
           <div class="col-lg-3 col-xs-12">
+            <a href="/">
+              <i class="fa fa-fw fa-user"></i> About
+            </a><br />
             <a href="https://twitter.com/xerkus">
               <i class="fa fa-fw fa-twitter"></i> Twitter
             </a><br />
@@ -39,8 +42,7 @@
       </div>
     </header>
     <div class="container">
-      <article class="blogpost">
-  <a class="btn btn-back btn-primary" href="/blog"><i class="fa fa-arrow-left"></i> Back</a>
+      <article class="blog-post">
   <h1>On the matter of immutables
       </h1>
   <div>
@@ -71,7 +73,7 @@ of it, it is the key.</p>
 
 <p>Lets look at the practical applications:</p>
 
-<aside class="aside-note rule-of-thumb">
+<aside class="side-note rule-of-thumb">
 <p>Value Objects are natural candidates for immutability.</p>
 </aside>
 
@@ -90,7 +92,7 @@ yet configured or configuration being ignored since it was modified after
 service was created. Again, producing new service manager with new
 configuration does not invalidate existing service manager.</p>
 
-<aside class="aside-note rule-of-thumb">
+<aside class="side-note rule-of-thumb">
 <p>Do not apply immutability if previous state is immediately invalidated upon
 change.</p>
 </aside>
@@ -106,10 +108,20 @@ User becomes customer the moment he places that order, as such it makes much
 more sense to create new immutable customer object from user object.</p>
 
   </div>
-          <p class="tags">
-      Tags:
-            <a href="/blog/tags/oop">oop</a>,             <a href="/blog/tags/immutability">immutability</a>,             <a href="/blog/tags/published-draft">published-draft</a>            </p>
-  
+  <footer class="post-meta">
+    <div class="meta-item date">
+  <time datetime="2015-10-07">
+    <i class="fa fa-calendar"></i> 2015-10-07
+  </time>
+</div>
+<div class="meta-item category">
+    <i class="fa fa-folder-o"></i>
+        <a href="/blog/categories/coding-practices">coding-practices</a>    </div>
+<div class="meta-item tags">
+    <i class="fa fa-tags"></i>
+        <a href="/blog/tags/oop">oop</a>,         <a href="/blog/tags/immutability">immutability</a>,         <a href="/blog/tags/draft">draft</a>    </div>
+  </footer>
+
         <nav class="article">
           <ul>
                                               <li>Previous: <a class="previous" href="/blog/beginning-of-the-end" title="Starting blogging, finally"><span class="title">Starting blogging, finally</span></a></li>
