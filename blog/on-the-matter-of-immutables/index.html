@@ -16,7 +16,9 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-9 col-xs-12"">
-            <h1 class="blog-title">Xerkus' opinionated ranting ground</h1>
+            <h1 class="blog-title">
+              <a href="/">Xerkus' opinionated ranting ground</a>
+            </h1>
             <p class="small text-muted">
               Thread carefully, your sanity is at stake.
             </p>
@@ -42,11 +44,20 @@
       </div>
     </header>
     <div class="container">
-      <article class="blog-post">
-  <h1>On the matter of immutables
-      </h1>
-  <div>
-    <p>Yesterday I was asked to give feedback on some issue related to handling
+      <div class="blog-content">
+  <div class="row">
+    <article class="blog-post col-xs-12 col-md-9 push-md-3 col-xl-10 push-xl-2">
+
+      <header class="post-header">
+        <h1>On the matter of immutables
+        </h1>
+                <p>
+          Some thoughts and a bit of practical guide to immutability.
+        </p>
+              </header>
+
+      <div>
+      <p>Yesterday I was asked to give feedback on some issue related to handling
 immutable object. It felt counterintuitive but author couldn't put his finger
 on what exactly was wrong. Issue was more architectural and on a broader scale but i
 want to focus on immutable part of it.</p>
@@ -107,9 +118,10 @@ business rule and it should be handled differently.
 User becomes customer the moment he places that order, as such it makes much
 more sense to create new immutable customer object from user object.</p>
 
-  </div>
-  <footer class="post-meta">
-    <div class="meta-item date">
+      </div>
+
+      <footer class="post-meta">
+        <div class="meta-item date">
   <time datetime="2015-10-07">
     <i class="fa fa-calendar"></i> 2015-10-07
   </time>
@@ -120,14 +132,15 @@ more sense to create new immutable customer object from user object.</p>
 <div class="meta-item tags">
     <i class="fa fa-tags"></i>
         <a href="/blog/tags/OOP">OOP</a>,         <a href="/blog/tags/immutability">immutability</a>,         <a href="/blog/tags/draft">draft</a>    </div>
-  </footer>
-
-        <nav class="article">
-          <ul>
-                                              <li>Previous: <a class="previous" href="/blog/beginning-of-the-end" title="Starting blogging, finally"><span class="title">Starting blogging, finally</span></a></li>
-                        </ul>
+      </footer>
+    </article>
+  </div>
+    <nav class="article">
+              <a class="btn btn-secondary pull-right" href="/blog/beginning-of-the-end" title="Starting&#x20;blogging,&#x20;finally">
+        Previous: Starting blogging, finally
+      </a>
       </nav>
-  </article>
+  </div>
     </div>
 
     

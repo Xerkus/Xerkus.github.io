@@ -7210,10 +7210,21 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   @media (min-width: 768px) {
     .blog-title {
       font-size: 2.5rem; } }
+  .blog-title a, .blog-title a:hover {
+    color: inherit;
+    text-decoration: inherit; }
+
+.blog-content {
+  margin-bottom: 1rem; }
+  .blog-content > nav::after {
+    content: "";
+    display: table;
+    clear: both; }
 
 .blog-post {
   display: flex;
-  flex-direction: column; }
+  flex-direction: column;
+  margin-bottom: 1rem; }
   .blog-post .btn-back {
     float: left !important;
     margin-top: 2rem;
@@ -7232,10 +7243,25 @@ github.com style (c) Vasily Polovnyov <vast@whiteants.net>
   .blog-post h5, .blog-post h6 {
     font-size: 1rem; }
   .blog-post .side-note {
-    float: left !important;
-    margin-left: -13rem;
-    width: 12.3rem;
-    font-size: 0.9rem; }
+    font-size: 0.9rem;
+    padding: 0 0.5rem 0;
+    background-color: #202328; }
+    .blog-post .side-note::after {
+      content: "";
+      display: table;
+      clear: both; }
+  .blog-post .side-note:before {
+    font-family: FontAwesome;
+    content: "";
+    display: inline-block;
+    float: left;
+    padding-right: 3px;
+    vertical-align: middle; }
+  @media (min-width: 768px) {
+    .blog-post .side-note {
+      float: left !important;
+      margin-left: -13rem;
+      width: 12.3rem; } }
   .blog-post .post-meta {
     order: -1;
     @clearfix; }
