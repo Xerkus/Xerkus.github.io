@@ -9,9 +9,7 @@
     ],
     "require": {
         "sculpin/sculpin": "dev-master",
-        "dflydev/embedded-composer-console": "dev-master",
-        "dflydev/embedded-composer-core": "dev-master",
-        "composer/composer": "dev-master"
+        "dflydev/embedded-composer": "^1.0@dev"
     },
     "config": {
         "preferred-install": "dist"

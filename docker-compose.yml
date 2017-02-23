@@ -1,15 +1,9 @@
 version: '2'
 services:
-  gulp:
+  node:
     build:
       context: .
-      dockerfile: .compose/gulp.dockerfile
-      args:
-        - USER_ID=$UID
+      dockerfile: .compose/node.dockerfile
     volumes:
       - .:/node/app:z
     command: ""
-  bower:
-    extends:
-      service: gulp
-    command: bower

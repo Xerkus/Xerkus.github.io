@@ -5,13 +5,16 @@
     "url": "https://github.com/Xerkus/Xerkus.github.io.git"
   },
   "dependencies": {
-    "del": "~2.2.0",
-    "gulp": "~3.9.0",
-    "gulp-bower": "0.0.10",
-    "gulp-util": "~3.0.6",
-    "run-sequence": "~1.1.2",
-    "gulp-sass": "~2.2.0",
-    "gulp-rename": "~1.2.2",
-    "merge-stream": "~1.0.0"
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-util": "^3.0.6",
+    "run-sequence": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "merge-stream": "^1.0.0",
+    "bootstrap": "4.0.0-alpha.6",
+    "highlight.js": "^9.9.0",
+    "jquery": "^3.1.0",
+    "font-awesome": "^4.7.0"
   }
 }
