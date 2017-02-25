@@ -1,6 +1,6 @@
 version: '2'
 services:
-  node:
+  assets:
     build:
       context: .
       dockerfile: .compose/node.dockerfile
