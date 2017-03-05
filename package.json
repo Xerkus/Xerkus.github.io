@@ -1,20 +1,24 @@
 {
-  "name": "xerkus-blog",
+  "name": "@xerkus/blog",
   "repository": {
     "type": "git",
     "url": "https://github.com/Xerkus/Xerkus.github.io.git"
   },
   "dependencies": {
-    "del": "^2.2.0",
-    "gulp": "^3.9.0",
-    "gulp-util": "^3.0.6",
-    "run-sequence": "^1.2.2",
-    "gulp-sass": "^3.1.0",
-    "gulp-rename": "^1.2.2",
-    "merge-stream": "^1.0.0",
+    "webpack": "^2.2.0",
+    "extract-text-webpack-plugin": "^2.0.0",
+    "css-loader": "^0.26.2",
+    "file-loader": "^0.10.1",
+    "sass-loader": "^6.0.0",
+    "style-loader": "^0.13.2",
+    "url-loader": "^0.5.8",
+    "node-sass": "4.5.0",
     "bootstrap": "4.0.0-alpha.6",
     "highlight.js": "^9.9.0",
     "jquery": "^3.1.0",
     "font-awesome": "^4.7.0"
+  },
+  "scripts": {
+    "assets-build": "webpack"
   }
 }

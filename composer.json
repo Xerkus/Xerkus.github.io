@@ -8,7 +8,7 @@
         }
     ],
     "require": {
-        "sculpin/sculpin": "dev-master",
+        "sculpin/sculpin": "^2.1@dev",
         "dflydev/embedded-composer": "^1.0@dev"
     },
     "config": {

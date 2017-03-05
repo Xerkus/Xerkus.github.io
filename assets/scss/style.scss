@@ -1,12 +1,16 @@
 //dev override
 //@import "twbvariables";
-
-@import "variables";
-@import "bootstrap/scss/bootstrap";
+@import "bootswatchvariables";
+//@import "variables";
+@import "~bootstrap/scss/bootstrap";
+//@import "bootswatch";
+//@import "custom.css";
 
 @import "fontawesome";
 
-@import "highlightjs/styles/github";
+//@import "~font-awesome/scss/variables";
+
+@import "~highlight.js/styles/dracula.css";
 
 @import "tag_cloud";
 
@@ -36,7 +40,6 @@
 }
 
 .overview {
-    @extend .m-b-md;
 }
 
 .blog-post {
@@ -45,7 +48,6 @@
     margin-bottom: $spacer-y;
 
     .btn-back {
-        @include pull-left();
         margin-top: 2rem;
         margin-left: -13rem;
     }
@@ -88,12 +90,11 @@
 
     @include media-breakpoint-up(md) {
         .side-note {
-            @include pull-left();
             margin-left: -13rem;
             width: 12.3rem;
         }
     }
-    
+
     .post-meta {
         order: -1;
         .meta-item {
