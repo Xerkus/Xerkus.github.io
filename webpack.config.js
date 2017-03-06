@@ -18,6 +18,16 @@ module.exports = {
     },
     module: {
         rules: [{
+            test: /\.css$/,
+            use: extractSass.extract({
+                use: [{
+                    loader: "css-loader",
+                    options: {
+                        sourceMap: true,
+                    }
+                }],
+            })
+        }, {
             test: /\.scss$/,
             use: extractSass.extract({
                 use: [{
