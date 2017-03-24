@@ -29,6 +29,8 @@
       "rm -rf ./output_prod"
     ],
     "deploy": [
+      "@clean",
+      "@build",
       "./deploy.sh"
     ]
   }

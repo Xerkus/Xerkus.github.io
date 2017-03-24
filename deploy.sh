@@ -24,9 +24,10 @@ fi
 CURR_COMMIT=$(git rev-parse --short HEAD)
 
 rm -rf ./.gh-pages-publish
-git fetch origin master:master
+git fetch origin master
 git worktree add ./.gh-pages-publish master
 cd .gh-pages-publish
+git reset --hard origin/master
 
 rsync --quiet --archive \
     --filter="P .git*" --filter="P CNAME" --filter="P .nojekyll" \
