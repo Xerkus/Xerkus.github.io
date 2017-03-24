@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <title><![CDATA[Xerkus&#039; blog]]></title>
+    <link href="/atom.xml" rel="self"/>
+    <link href="/"/>
+    <updated>2017-03-24T10:39:39+00:00</updated>
+    <id>http://blog.xerkus.pro/</id>
+        <generator uri="http://sculpin.io/">Sculpin</generator>
+            <entry>
+            <title type="html"><![CDATA[On the matter of immutables]]></title>
+            <link href="/blog/on-the-matter-of-immutables/"/>
+            <updated>2015-10-07T00:00:00+00:00</updated>
+            <id>http://blog.xerkus.pro/blog/on-the-matter-of-immutables/</id>
+            <content type="html"><![CDATA[<p>Yesterday I was asked to give feedback on some issue related to handling
+immutable object. It felt counterintuitive but author couldn't put his finger
+on what exactly was wrong. Issue was more architectural and on a broader scale but i
+want to focus on immutable part of it.</p>
+
+<p>Immutability concept is old but recently it got spike of popularity in web development.
+It spurred less experienced developers to try and apply it without understanding fully
+its upsides and downsides. Frankly, that is not that bad on itself,
+it is the normal process of learning if only it was a bit less eager.</p>
+
+<h2 id="so%2C-immutability%2C-what-is-it-about%3F">So, immutability, what is it about?</h2>
+
+<p>Immutability is an assurance that the object you have will not be unexpectedly
+changed elsewhere. It opens a way for safe sharing of objects. It might not
+look like that much of an issue, but don't underestimate it! Subtle
+inconsistent bugs are extremely hard to debug and can lead to devastating
+consequences.</p>
+
+<h2 id="when-immutability-is-applicable%3F">When immutability is applicable?</h2>
+
+<p>As an adept of It Depends Driven Development, I can not stress enough that what
+object looks like does not matter nearly as much as in which context it is used
+and which concept it represents. Look at the context when in doubt, learn more
+of it, it is the key.</p>
+
+<p>Lets look at the practical applications:</p>
+
+<aside class="side-note rule-of-thumb">
+<p>Value Objects are natural candidates for immutability.</p>
+</aside>
+
+<p>Object representing concept whose identity construed of the sum of the
+values is a strong candidate for immutability. Indeed, should you change
+street in address you will get new address and that correlates well with
+producing new object for new value.</p>
+
+<p>Hot example right now is PSR-7 Request and Response. It is no longer same
+request should any of the values change and at the same time original unchanged
+request is still valid.</p>
+
+<p>Immutability can be partial, for example Zend\ServiceManager configuration is
+immutable. That prevents issues such as attempting to pull service which is not
+yet configured or configuration being ignored since it was modified after
+service was created. Again, producing new service manager with new
+configuration does not invalidate existing service manager.</p>
+
+<aside class="side-note rule-of-thumb">
+<p>Do not apply immutability if previous state is immediately invalidated upon
+change.</p>
+</aside>
+
+<p>Now lets consider object with longer lifecycle, say entitiy representing user:
+if user changes his username or email, he stays the same user. Only one
+canonical representation for user can exist at a time, that means previous
+state is immediately invalidated and replaced.
+Now one might think "Hold on a second, but what about user who placed order? His
+info should not change!" And he will be correct but not right. This is implicit
+business rule and it should be handled differently.
+User becomes customer the moment he places that order, as such it makes much
+more sense to create new immutable customer object from user object.</p>
+]]></content>
+        </entry>
+            <entry>
+            <title type="html"><![CDATA[Starting blogging, finally]]></title>
+            <link href="/blog/beginning-of-the-end/"/>
+            <updated>2015-09-22T00:00:00+00:00</updated>
+            <id>http://blog.xerkus.pro/blog/beginning-of-the-end/</id>
+            <content type="html"><![CDATA[<p>Hello there.</p>
+
+<p>Initially I set out on writing lengthy blog post about starting blogging but
+honestly, who cares?
+I will make short status update instead.</p>
+
+<p>Yes, i should have started blogging all those years ago but anyone who knows me
+can tell i prefer to keep to myself. There are several reasons why I decided to
+start now, but most important comes from my meddling with DDD. Language is a
+very important and powerful tool in domain discovery and... I don't know how to use
+it!</p>
+
+<p>I have read hundreds of books, countless blog posts, articles and docs but with
+no practice it is all in vain. The fact that english is not my native language
+does not help either. Great news are there is nothing that can't be improved
+with some practice. So this is it: my ranting grounds are officially open.</p>
+
+<p>I did not decide on the design yet. I think I will leave it as is for now. I
+can slowly tweak layout and styles over next couple months while I focus on
+content first.  Some familiar grounds will be nice to begin with, I suppose.
+Simple tutorial maybe?</p>
+
+<p>Upd: I started tagging some of the posts with 'published-draft'. Those are the
+posts I want to share but they do not reflect my opinion precisely or fully. I
+am going to revisit those as my writing skills improve.</p>
+]]></content>
+        </entry>
+    </feed>

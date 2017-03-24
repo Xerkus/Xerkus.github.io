@@ -6,34 +6,22 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <link href="/assets/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="/assets/style.css" rel="stylesheet" type="text/css" />
     <link rel="stylesheet" href="/assets/highlightjs/styles/github.css" />
     <link rel="alternate" type="application/atom+xml" href="/atom.xml" title="Xerkus&#x27;&#x20;blog activity feed" />
   </head>
   <body>
-    <a id="skippy" class="sr-only sr-only-focusable" href="#content">
+    <div class="navbar navbar-toggleable-md fixed-top navbar-inverse bg-primary">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
       <div class="container">
-        <span class="skiplink-text">Skip to main content</span>
-      </div>
-    </a>
-    <header class="navbar navbar-dark navbar-fixed-top bg-inverse">
-      <div class="container">
-       <div class="clearfix">
-         <a class="navbar-brand hidden-md-up" href="/">
-            Bootswatch
-         </a>
-         <button class="navbar-toggler pull-right hidden-md-down" type="button" data-toggle="collapse" data-target="#bd-main-nav">
-           &#9776;
-         </button>
-       </div>
-      <nav class="collapse navbar-toggleable-sm" id="bd-main-nav">
-         <a class="navbar-brand hidden-sm-down" href="/">
-            Bootswatch
-         </a>
-          <ul class="nav navbar-nav">
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+          <a href="../" class="navbar-brand">Bootswatch</a>
+          <ul class="navbar-nav">
             <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button">Themes <span class="caret"></span></a>
-              <div class="dropdown-menu">
+              <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="themes">Themes <span class="caret"></span></a>
+              <div class="dropdown-menu" aria-labelledby="themes">
                 <a class="dropdown-item" href="../default/">Default</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="../cerulean/">Cerulean</a>
@@ -42,12 +30,17 @@
                 <a class="dropdown-item" href="../darkly/">Darkly</a>
                 <a class="dropdown-item" href="../flatly/">Flatly</a>
                 <a class="dropdown-item" href="../journal/">Journal</a>
+                <a class="dropdown-item" href="../litera/">Litera</a>
                 <a class="dropdown-item" href="../lumen/">Lumen</a>
-                <a class="dropdown-item" href="../paper/">Paper</a>
-                <a class="dropdown-item" href="../readable/">Readable</a>
+                <a class="dropdown-item" href="../lux/">Lux</a>
+                <a class="dropdown-item" href="../materia/">Materia</a>
+                <a class="dropdown-item" href="../minty/">Minty</a>
+                <a class="dropdown-item" href="../pulse/">Pulse</a>
                 <a class="dropdown-item" href="../sandstone/">Sandstone</a>
                 <a class="dropdown-item" href="../simplex/">Simplex</a>
+                <a class="dropdown-item" href="../sketchy/">Sketchy</a>
                 <a class="dropdown-item" href="../slate/">Slate</a>
+                <a class="dropdown-item" href="../solar/">Solar</a>
                 <a class="dropdown-item" href="../spacelab/">Spacelab</a>
                 <a class="dropdown-item" href="../superhero/">Superhero</a>
                 <a class="dropdown-item" href="../united/">United</a>
@@ -62,14 +55,11 @@
             </li>
             <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" id="download">Slate <span class="caret"></span></a>
-              <div class="dropdown-menu">
-                <a class="dropdown-item" href="http://jsfiddle.net/bootswatch/g1q7jxzf/">Open Sandbox</a>
+              <div class="dropdown-menu" aria-labelledby="download">
+                <a class="dropdown-item" href="http://jsfiddle.net/bootswatch/g1q7jxzf/">Open in JSFiddle</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="./bootstrap.min.css">bootstrap.min.css</a>
                 <a class="dropdown-item" href="./bootstrap.css">bootstrap.css</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="./variables.less">variables.less</a>
-                <a class="dropdown-item" href="./bootswatch.less">bootswatch.less</a>
                 <div class="dropdown-divider"></div>
                 <a class="dropdown-item" href="./_variables.scss">_variables.scss</a>
                 <a class="dropdown-item" href="./_bootswatch.scss">_bootswatch.scss</a>
@@ -77,14 +67,18 @@
             </li>
           </ul>
 
-          <ul class="nav navbar-nav pull-right">
-            <li class="nav-item"><a class="nav-link" href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a></li>
+          <ul class="nav navbar-nav ml-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a>
+            </li>
           </ul>
 
-      </nav>
+        </div>
+      </div>
     </div>
-    </header>
 
 
     <div class="container">
@@ -95,6 +89,27 @@
             <h1>Slate</h1>
             <p class="lead">Shades of gunmetal gray</p>
           </div>
+          <div class="col-lg-4 col-md-5 col-sm-6">
+            <div class="sponsor">
+              <script async type="text/javascript" src="//cdn.carbonads.com/carbon.js?zoneid=1673&serve=C6AILKT&placement=bootswatchcom" id="_carbonads_js"></script>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-3 col-md-3 col-sm-4">
+            <div class="list-group table-of-contents">
+              <a class="list-group-item list-group-item-action" href="#navbars">Navbars</a>
+              <a class="list-group-item list-group-item-action" href="#buttons">Buttons</a>
+              <a class="list-group-item list-group-item-action" href="#typography">Typography</a>
+              <a class="list-group-item list-group-item-action" href="#tables">Tables</a>
+              <a class="list-group-item list-group-item-action" href="#forms">Forms</a>
+              <a class="list-group-item list-group-item-action" href="#navs">Navs</a>
+              <a class="list-group-item list-group-item-action" href="#indicators">Indicators</a>
+              <a class="list-group-item list-group-item-action" href="#progress">Progress</a>
+              <a class="list-group-item list-group-item-action" href="#containers">Containers</a>
+              <a class="list-group-item list-group-item-action" href="#dialogs">Dialogs</a>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -103,95 +118,69 @@
       <div class="bs-docs-section clearfix">
         <div class="row">
           <div class="col-lg-12">
-          <h1 id="navbar">Navbar</h1>
+            <div class="page-header">
+              <h1 id="navbars">Navbars</h1>
+            </div>
 
             <div class="bs-component">
-              <nav class="navbar navbar-default">
-                <div class="container-fluid">
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Brand</a>
-                  </div>
+              <nav class="navbar navbar-toggleable-md navbar-inverse bg-primary">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <a class="navbar-brand" href="#">Navbar</a>
 
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
-                      <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                      <li><a href="#">Link</a></li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Action</a></li>
-                          <li><a href="#">Another action</a></li>
-                          <li><a href="#">Something else here</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">Separated link</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">One more separated link</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <form class="navbar-form navbar-left" role="search">
-                      <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                      </div>
-                      <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                    <ul class="nav navbar-nav navbar-right">
-                      <li><a href="#">Link</a></li>
-                    </ul>
-                  </div>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                  </form>
                 </div>
               </nav>
             </div>
 
             <div class="bs-component">
-              <nav class="navbar navbar-inverse">
-                <div class="container-fluid">
-                  <div class="navbar-header">
-                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-2">
-                      <span class="sr-only">Toggle navigation</span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                      <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="#">Brand</a>
-                  </div>
+              <nav class="navbar navbar-toggleable-md navbar-inverse bg-inverse">
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+                <a class="navbar-brand" href="#">Navbar</a>
 
-                  <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-2">
-                    <ul class="nav navbar-nav">
-                      <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
-                      <li><a href="#">Link</a></li>
-                      <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Dropdown <span class="caret"></span></a>
-                        <ul class="dropdown-menu" role="menu">
-                          <li><a href="#">Action</a></li>
-                          <li><a href="#">Another action</a></li>
-                          <li><a href="#">Something else here</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">Separated link</a></li>
-                          <li class="divider"></li>
-                          <li><a href="#">One more separated link</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                    <form class="navbar-form navbar-left" role="search">
-                      <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search">
-                      </div>
-                      <button type="submit" class="btn btn-default">Submit</button>
-                    </form>
-                    <ul class="nav navbar-nav navbar-right">
-                      <li><a href="#">Link</a></li>
-                    </ul>
-                  </div>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                  <ul class="navbar-nav mr-auto">
+                    <li class="nav-item active">
+                      <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Features</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="#">About</a>
+                    </li>
+                  </ul>
+                  <form class="form-inline">
+                    <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                    <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                  </form>
                 </div>
               </nav>
-            </div><!-- /example -->
+            </div>
 
           </div>
         </div>
@@ -213,150 +202,156 @@
           <div class="col-lg-7">
 
             <p class="bs-component">
-              <button type="button" href="#" class="btn btn-secondary">Default</button>
-              <button type="button" href="#" class="btn btn-primary">Primary</button>
-              <button type="button" href="#" class="btn btn-success">Success</button>
-              <button type="button" href="#" class="btn btn-info">Info</button>
-              <button type="button" href="#" class="btn btn-warning">Warning</button>
-              <button type="button" href="#" class="btn btn-danger">Danger</button>
-              <button type="button" href="#" class="btn btn-link">Link</button>
+              <button type="button" class="btn btn-primary">Primary</button>
+              <button type="button" class="btn btn-secondary">Secondary</button>
+              <button type="button" class="btn btn-success">Success</button>
+              <button type="button" class="btn btn-info">Info</button>
+              <button type="button" class="btn btn-warning">Warning</button>
+              <button type="button" class="btn btn-danger">Danger</button>
+              <button type="button" class="btn btn-link">Link</button>
             </p>
 
             <p class="bs-component">
-              <button href="#" class="btn btn-secondary disabled">Default</button>
-              <button href="#" class="btn btn-primary disabled">Primary</button>
-              <button href="#" class="btn btn-success disabled">Success</button>
-              <button href="#" class="btn btn-info disabled">Info</button>
-              <button href="#" class="btn btn-warning disabled">Warning</button>
-              <button href="#" class="btn btn-danger disabled">Danger</button>
-              <button href="#" class="btn btn-link disabled">Link</button>
+              <button type="button" class="btn btn-primary disabled">Primary</button>
+              <button type="button" class="btn btn-secondary disabled">Secondary</button>
+              <button type="button" class="btn btn-success disabled">Success</button>
+              <button type="button" class="btn btn-info disabled">Info</button>
+              <button type="button" class="btn btn-warning disabled">Warning</button>
+              <button type="button" class="btn btn-danger disabled">Danger</button>
+              <button type="button" class="btn btn-link disabled">Link</button>
             </p>
 
+            <p class="bs-component">
+              <button type="button" class="btn btn-outline-primary">Primary</button>
+              <button type="button" class="btn btn-outline-secondary">Secondary</button>
+              <button type="button" class="btn btn-outline-success">Success</button>
+              <button type="button" class="btn btn-outline-info">Info</button>
+              <button type="button" class="btn btn-outline-warning">Warning</button>
+              <button type="button" class="btn btn-outline-danger">Danger</button>
+            </p>
 
-            <div style="margin-bottom: 15px;">
-              <div class="btn-toolbar bs-component" style="margin: 0;">
-                <div class="btn-group">
-                  <button href="#" class="btn btn-secondary">Default</button>
-                  <button href="#" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </div>
-
-                <div class="btn-group">
-                  <button type="button" href="#" class="btn btn-primary">Primary</button>
-                  <button type="button" href="#" class="btn btn-primary dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </div>
-
-                <div class="btn-group">
-                  <button href="#" class="btn btn-success">Success</button>
-                  <button href="#" class="btn btn-success dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </div>
-
-                <div class="btn-group">
-                  <button href="#" class="btn btn-info">Info</button>
-                  <button href="#" class="btn btn-info dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
-                </div>
-
-                <div class="btn-group">
-                  <button href="#" class="btn btn-warning">Warning</button>
-                  <button href="#" class="btn btn-warning dropdown-toggle" data-toggle="dropdown"><span class="caret"></span></button>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
+            <div class="bs-component">
+              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn btn-primary">Primary</button>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop1" type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop1">
+                    <a class="dropdown-item" href="#">Dropdown link</a>
+                    <a class="dropdown-item" href="#">Dropdown link</a>
+                  </div>
                 </div>
               </div>
-            </div>
 
-            <p class="bs-component">
-              <button href="#" class="btn btn-primary btn-lg">Large button</button>
-              <button href="#" class="btn btn-primary">Default button</button>
-              <button href="#" class="btn btn-primary btn-sm">Small button</button>
-            </p>
-
-          </div>
-          <div class="col-lg-5">
-
-            <p class="bs-component">
-              <button href="#" class="btn btn-secondary btn-lg btn-block">Block level button</button>
-            </p>
-
-
-            <div class="bs-component" style="margin-bottom: 15px;">
-              <div class="btn-group btn-group-justified">
-                <button href="#" class="btn btn-secondary">Left</button>
-                <button href="#" class="btn btn-secondary">Middle</button>
-                <button href="#" class="btn btn-secondary">Right</button>
+              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn btn-success">Success</button>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop2" type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop2">
+                    <a class="dropdown-item" href="#">Dropdown link</a>
+                    <a class="dropdown-item" href="#">Dropdown link</a>
+                  </div>
+                </div>
               </div>
-            </div>
 
-            <div class="bs-component" style="margin-bottom: 15px;">
-              <div class="btn-toolbar">
-                <div class="btn-group">
-                  <button type="button" href="#" class="btn btn-secondary">1</button>
-                  <button type="button" href="#" class="btn btn-secondary">2</button>
-                  <button type="button" href="#" class="btn btn-secondary">3</button>
-                  <button type="button" href="#" class="btn btn-secondary">4</button>
+              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn btn-info">Info</button>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop3" type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop3">
+                    <a class="dropdown-item" href="#">Dropdown link</a>
+                    <a class="dropdown-item" href="#">Dropdown link</a>
+                  </div>
                 </div>
+              </div>
 
-                <div class="btn-group">
-                  <button href="#" class="btn btn-secondary">5</button>
-                  <button href="#" class="btn btn-secondary">6</button>
-                  <button href="#" class="btn btn-secondary">7</button>
-                </div>
-
-                <div class="btn-group">
-                  <button href="#" class="btn btn-secondary">8</button>
-                  <div class="btn-group">
-                    <button href="#" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown">
-                      Dropdown
-                      <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu">
-                      <li><a href="#">Dropdown link</a></li>
-                      <li><a href="#">Dropdown link</a></li>
-                      <li><a href="#">Dropdown link</a></li>
-                     </ul>
+              <div class="btn-group" role="group" aria-label="Button group with nested dropdown">
+                <button type="button" class="btn btn-danger">Danger</button>
+                <div class="btn-group" role="group">
+                  <button id="btnGroupDrop4" type="button" class="btn btn-danger dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"></button>
+                  <div class="dropdown-menu" aria-labelledby="btnGroupDrop4">
+                    <a class="dropdown-item" href="#">Dropdown link</a>
+                    <a class="dropdown-item" href="#">Dropdown link</a>
                   </div>
                 </div>
               </div>
             </div>
 
             <div class="bs-component">
-              <div class="btn-group-vertical">
-                  <button href="#" class="btn btn-secondary">Button</button>
-                  <button href="#" class="btn btn-secondary">Button</button>
-                  <button href="#" class="btn btn-secondary">Button</button>
-                  <button href="#" class="btn btn-secondary">Button</button>
+              <button type="button" class="btn btn-primary btn-lg">Large button</button>
+              <button type="button" class="btn btn-primary">Default button</button>
+              <button type="button" class="btn btn-primary btn-sm">Small button</button>
+            </div>
+
+          </div>
+          <div class="col-lg-5">
+
+            <p class="bs-component">
+              <button type="button" class="btn btn-primary btn-lg btn-block">Block level button</button>
+            </p>
+
+            <div class="bs-component" style="margin-bottom: 15px;">
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                  <input type="checkbox" checked> Checkbox 1
+                </label>
+                <label class="btn btn-primary">
+                  <input type="checkbox"> Checkbox 2
+                </label>
+                <label class="btn btn-primary">
+                  <input type="checkbox"> Checkbox 3
+                </label>
+              </div>
+            </div>
+
+            <div class="bs-component" style="margin-bottom: 15px;">
+              <div class="btn-group" data-toggle="buttons">
+                <label class="btn btn-primary active">
+                  <input type="radio" name="options" id="option1" checked> Radio 1
+                </label>
+                <label class="btn btn-primary">
+                  <input type="radio" name="options" id="option2"> Radio 2
+                </label>
+                <label class="btn btn-primary">
+                  <input type="radio" name="options" id="option3"> Radio 3
+                </label>
+              </div>
+            </div>
+
+            <div class="bs-component">
+              <div class="btn-group-vertical" data-toggle="buttons">
+                <button type="button" class="btn btn-primary">Button</button>
+                <button type="button" class="btn btn-primary">Button</button>
+                <button type="button" class="btn btn-primary">Button</button>
+                <button type="button" class="btn btn-primary">Button</button>
+                <button type="button" class="btn btn-primary">Button</button>
+                <button type="button" class="btn btn-primary">Button</button>
+              </div>
+            </div>
+
+            <div class="bs-component" style="margin-bottom: 15px;">
+              <div class="btn-group" role="group" aria-label="Basic example">
+                <button type="button" class="btn btn-secondary">Left</button>
+                <button type="button" class="btn btn-secondary">Middle</button>
+                <button type="button" class="btn btn-secondary">Right</button>
+              </div>
+            </div>
+
+            <div class="bs-component" style="margin-bottom: 15px;">
+              <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
+                <div class="btn-group" role="group" aria-label="First group">
+                  <button type="button" class="btn btn-secondary">1</button>
+                  <button type="button" class="btn btn-secondary">2</button>
+                  <button type="button" class="btn btn-secondary">3</button>
+                  <button type="button" class="btn btn-secondary">4</button>
+                </div>
+                <div class="btn-group" role="group" aria-label="Second group">
+                  <button type="button" class="btn btn-secondary">5</button>
+                  <button type="button" class="btn btn-secondary">6</button>
+                  <button type="button" class="btn btn-secondary">7</button>
+                </div>
+                <div class="btn-group" role="group" aria-label="Third group">
+                  <button type="button" class="btn btn-secondary">8</button>
+                </div>
               </div>
             </div>
 
@@ -370,7 +365,7 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="page-header">
-              <h1 id="type">Typography</h1>
+              <h1 id="typography">Typography</h1>
             </div>
           </div>
         </div>
@@ -386,6 +381,10 @@
               <h4>Heading 4</h4>
               <h5>Heading 5</h5>
               <h6>Heading 6</h6>
+              <h3>
+                Heading
+                <small class="text-muted">with muted text</small>
+              </h3>
               <p class="lead">Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor.</p>
             </div>
           </div>
@@ -394,8 +393,8 @@
               <h2>Example body text</h2>
               <p>Nullam quis risus eget <a href="#">urna mollis ornare</a> vel eu leo. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nullam id dolor id nibh ultricies vehicula.</p>
               <p><small>This line of text is meant to be treated as fine print.</small></p>
-              <p>The following snippet of text is <strong>rendered as bold text</strong>.</p>
-              <p>The following snippet of text is <em>rendered as italicized text</em>.</p>
+              <p>The following is <strong>rendered as bold text</strong>.</p>
+              <p>The following is <em>rendered as italicized text</em>.</p>
               <p>An abbreviation of the word attribute is <abbr title="attribute">attr</abbr>.</p>
             </div>
 
@@ -424,17 +423,17 @@
         <div class="row">
           <div class="col-lg-6">
             <div class="bs-component">
-              <blockquote>
+              <blockquote class="blockquote">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
               </blockquote>
             </div>
           </div>
           <div class="col-lg-6">
             <div class="bs-component">
-              <blockquote class="pull-right">
+              <blockquote class="blockquote blockquote-reverse">
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-                <small>Someone famous in <cite title="Source Title">Source Title</cite></small>
+                <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite></footer>
               </blockquote>
             </div>
           </div>
@@ -452,8 +451,8 @@
             </div>
 
             <div class="bs-component">
-              <table class="table table-striped table-hover ">
-                <thead>
+              <table class="table table-striped table-hover table-bordered">
+                <thead class="thead-inverse">
                   <tr>
                     <th>#</th>
                     <th>Column heading</th>
@@ -474,38 +473,38 @@
                     <td>Column content</td>
                     <td>Column content</td>
                   </tr>
-                  <tr class="info">
+                  <tr class="table-info">
                     <td>3</td>
                     <td>Column content</td>
                     <td>Column content</td>
                     <td>Column content</td>
                   </tr>
-                  <tr class="success">
+                  <tr class="table-success">
                     <td>4</td>
                     <td>Column content</td>
                     <td>Column content</td>
                     <td>Column content</td>
                   </tr>
-                  <tr class="danger">
+                  <tr class="table-danger">
                     <td>5</td>
                     <td>Column content</td>
                     <td>Column content</td>
                     <td>Column content</td>
                   </tr>
-                  <tr class="warning">
+                  <tr class="table-warning">
                     <td>6</td>
                     <td>Column content</td>
                     <td>Column content</td>
                     <td>Column content</td>
                   </tr>
-                  <tr class="active">
+                  <tr class="table-active">
                     <td>7</td>
                     <td>Column content</td>
                     <td>Column content</td>
                     <td>Column content</td>
                   </tr>
                 </tbody>
-              </table> 
+              </table>
             </div><!-- /example -->
           </div>
         </div>
@@ -524,77 +523,76 @@
 
         <div class="row">
           <div class="col-lg-6">
-            <div class="well bs-component">
-              <form class="form-horizontal">
+            <div class="bs-component">
+              <form>
                 <fieldset>
                   <legend>Legend</legend>
                   <div class="form-group">
-                    <label for="inputEmail" class="col-lg-2 control-label">Email</label>
-                    <div class="col-lg-10">
-                      <input type="text" class="form-control" id="inputEmail" placeholder="Email">
-                    </div>
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                   </div>
                   <div class="form-group">
-                    <label for="inputPassword" class="col-lg-2 control-label">Password</label>
-                    <div class="col-lg-10">
-                      <input type="password" class="form-control" id="inputPassword" placeholder="Password">
-                      <div class="checkbox">
-                        <label>
-                          <input type="checkbox"> Checkbox
-                        </label>
-                      </div>
-                    </div>
+                    <label for="exampleInputPassword1">Password</label>
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
                   </div>
                   <div class="form-group">
-                    <label for="textArea" class="col-lg-2 control-label">Textarea</label>
-                    <div class="col-lg-10">
-                      <textarea class="form-control" rows="3" id="textArea"></textarea>
-                      <span class="help-block">A longer block of help text that breaks onto a new line and may extend beyond one line.</span>
-                    </div>
+                    <label for="exampleSelect1">Example select</label>
+                    <select class="form-control" id="exampleSelect1">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
                   </div>
                   <div class="form-group">
-                    <label class="col-lg-2 control-label">Radios</label>
-                    <div class="col-lg-10">
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                          Option one is this
-                        </label>
-                      </div>
-                      <div class="radio">
-                        <label>
-                          <input type="radio" name="optionsRadios" id="optionsRadios2" value="option2">
-                          Option two can be something else
-                        </label>
-                      </div>
-                    </div>
+                    <label for="exampleSelect2">Example multiple select</label>
+                    <select multiple class="form-control" id="exampleSelect2">
+                      <option>1</option>
+                      <option>2</option>
+                      <option>3</option>
+                      <option>4</option>
+                      <option>5</option>
+                    </select>
                   </div>
                   <div class="form-group">
-                    <label for="select" class="col-lg-2 control-label">Selects</label>
-                    <div class="col-lg-10">
-                      <select class="form-control" id="select">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                      <br>
-                      <select multiple="" class="form-control">
-                        <option>1</option>
-                        <option>2</option>
-                        <option>3</option>
-                        <option>4</option>
-                        <option>5</option>
-                      </select>
-                    </div>
+                    <label for="exampleTextarea">Example textarea</label>
+                    <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
                   </div>
                   <div class="form-group">
-                    <div class="col-lg-10 col-lg-offset-2">
-                      <button type="reset" class="btn btn-secondary">Cancel</button>
-                      <button type="submit" class="btn btn-primary">Submit</button>
-                    </div>
+                    <label for="exampleInputFile">File input</label>
+                    <input type="file" class="form-control-file" id="exampleInputFile" aria-describedby="fileHelp">
+                    <small id="fileHelp" class="form-text text-muted">This is some placeholder block-level help text for the above input. It's a bit lighter and easily wraps to a new line.</small>
                   </div>
+                  <fieldset class="form-group">
+                    <legend>Radio buttons</legend>
+                    <div class="form-check">
+                      <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                        Option one is this and that&mdash;be sure to include why it's great
+                      </label>
+                    </div>
+                    <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                        Option two can be something else and selecting it will deselect option one
+                      </label>
+                    </div>
+                    <div class="form-check disabled">
+                    <label class="form-check-label">
+                        <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3" disabled>
+                        Option three is disabled
+                      </label>
+                    </div>
+                  </fieldset>
+                  <div class="form-check">
+                    <label class="form-check-label">
+                      <input type="checkbox" class="form-check-input">
+                      Check me out
+                    </label>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Submit</button>
                 </fieldset>
               </form>
             </div>
@@ -602,54 +600,63 @@
           <div class="col-lg-4 col-lg-offset-1">
 
               <form class="bs-component">
-                <div class="form-group">
-                  <label class="control-label" for="focusedInput">Focused input</label>
-                  <input class="form-control" id="focusedInput" type="text" value="This is focused...">
-                </div>
 
                 <div class="form-group">
-                  <label class="control-label" for="disabledInput">Disabled input</label>
-                  <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
+                  <fieldset disabled>
+                    <label class="control-label" for="disabledInput">Disabled input</label>
+                    <input class="form-control" id="disabledInput" type="text" placeholder="Disabled input here..." disabled="">
+                  </fieldset>
                 </div>
 
-                <div class="form-group has-warning">
-                  <label class="control-label" for="inputWarning">Input warning</label>
-                  <input type="text" class="form-control" id="inputWarning">
-                </div>
-
-                <div class="form-group has-error">
-                  <label class="control-label" for="inputError">Input error</label>
-                  <input type="text" class="form-control" id="inputError">
+                <div class="form-group">
+                  <fieldset>
+                    <label class="control-label" for="readOnlyInput">Readonly input</label>
+                    <input class="form-control" id="readOnlyInput" type="text" placeholder="Readonly input here…" readonly>
+                  </fieldset>
                 </div>
 
                 <div class="form-group has-success">
-                  <label class="control-label" for="inputSuccess">Input success</label>
-                  <input type="text" class="form-control" id="inputSuccess">
+                  <label class="form-control-label" for="inputSuccess1">Input with success</label>
+                  <input type="text" class="form-control form-control-success" id="inputSuccess1">
+                  <div class="form-control-feedback">Success! You've done it.</div>
+                </div>
+
+                <div class="form-group has-warning">
+                  <label class="form-control-label" for="inputWarning1">Input with warning</label>
+                  <input type="text" class="form-control form-control-warning" id="inputWarning1">
+                  <div class="form-control-feedback">Shucks, try again.</div>
+                </div>
+
+                <div class="form-group has-danger">
+                  <label class="form-control-label" for="inputDanger1">Input with danger</label>
+                  <input type="text" class="form-control form-control-danger" id="inputDanger1">
+                  <div class="form-control-feedback">Sorry, that username's taken. Try another?</div>
                 </div>
 
                 <div class="form-group">
-                  <label class="control-label" for="inputLarge">Large input</label>
-                  <input class="form-control input-lg" type="text" id="inputLarge">
+                  <label class="col-form-label col-form-label-lg" for="inputLarge">Large input</label>
+                  <input class="form-control form-control-lg" type="text" id="inputLarge">
                 </div>
 
                 <div class="form-group">
-                  <label class="control-label" for="inputDefault">Default input</label>
+                  <label class="col-form-label" for="inputDefault">Default input</label>
                   <input type="text" class="form-control" id="inputDefault">
                 </div>
 
                 <div class="form-group">
-                  <label class="control-label" for="inputSmall">Small input</label>
-                  <input class="form-control input-sm" type="text" id="inputSmall">
+                  <label class="col-form-label col-form-label-sm" for="inputSmall">Small input</label>
+                  <input class="form-control form-control-sm" type="text" id="inputSmall">
                 </div>
 
                 <div class="form-group">
                   <label class="control-label">Input addons</label>
-                  <div class="input-group">
-                    <span class="input-group-addon">$</span>
-                    <input type="text" class="form-control">
-                    <span class="input-group-btn">
-                      <button class="btn btn-secondary" type="button">Button</button>
-                    </span>
+                  <div class="form-group">
+                    <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+                    <div class="input-group">
+                      <div class="input-group-addon">$</div>
+                      <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+                      <div class="input-group-addon">.00</div>
+                    </div>
                   </div>
                 </div>
               </form>
@@ -665,28 +672,34 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="page-header">
-              <h1 id="nav">Navs</h1>
+              <h1 id="navs">Navs</h1>
             </div>
           </div>
         </div>
 
-        <div class="row">
-          <div class="col-lg-4">
+        <div class="row" style="margin-bottom: 2rem;">
+          <div class="col-lg-6">
             <h2 id="nav-tabs">Tabs</h2>
             <div class="bs-component">
               <ul class="nav nav-tabs">
-                <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-                <li><a href="#profile" data-toggle="tab">Profile</a></li>
-                <li class="disabled"><a>Disabled</a></li>
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    Dropdown <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#dropdown1" data-toggle="tab">Action</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#dropdown2" data-toggle="tab">Another action</a></li>
-                  </ul>
+                <li class="nav-item">
+                  <a class="nav-link active" data-toggle="tab" href="#home">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" data-toggle="tab" href="#profile">Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                  </div>
                 </li>
               </ul>
               <div id="myTabContent" class="tab-content">
@@ -705,120 +718,160 @@
               </div>
             </div>
           </div>
-          <div class="col-lg-4">
+
+          <div class="col-lg-6">
             <h2 id="nav-pills">Pills</h2>
             <div class="bs-component">
               <ul class="nav nav-pills">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li class="disabled"><a href="#">Disabled</a></li>
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    Dropdown <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
               </ul>
             </div>
             <br>
             <div class="bs-component">
               <ul class="nav nav-pills nav-stacked">
-                <li class="active"><a href="#">Home</a></li>
-                <li><a href="#">Profile</a></li>
-                <li class="disabled"><a href="#">Disabled</a></li>
-                <li class="dropdown">
-                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    Dropdown <span class="caret"></span>
-                  </a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li><a href="#">Separated link</a></li>
-                  </ul>
+                <li class="nav-item">
+                  <a class="nav-link active" href="#">Active</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+                  <div class="dropdown-menu">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Separated link</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
                 </li>
               </ul>
             </div>
           </div>
-          <div class="col-lg-4">
-            <h2 id="nav-breadcrumbs">Breadcrumbs</h2>
-            <div class="bs-component">
-              <ul class="breadcrumb">
-                <li class="active">Home</li>
-              </ul>
-
-              <ul class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li class="active">Library</li>
-              </ul>
-
-              <ul class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Library</a></li>
-                <li class="active">Data</li>
-              </ul>
-            </div>
-
-          </div>
         </div>
 
-
         <div class="row">
-          <div class="col-lg-4">
+          <div class="col-lg-6">
+            <h2 id="nav-breadcrumbs">Breadcrumbs</h2>
+            <div class="bs-component">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item active">Home</li>
+              </ol>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item active">Library</li>
+              </ol>
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active">Data</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
             <h2 id="pagination">Pagination</h2>
             <div class="bs-component">
-              <ul class="pagination">
-                <li class="disabled"><a href="#">&laquo;</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&raquo;</a></li>
-              </ul>
+              <div>
+                <ul class="pagination">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#">&laquo;</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">5</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">&raquo;</a>
+                  </li>
+                </ul>
+              </div>
 
-              <ul class="pagination pagination-lg">
-                <li class="disabled"><a href="#">&laquo;</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">&raquo;</a></li>
-              </ul>
+              <div>
+                <ul class="pagination pagination-lg">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#">&laquo;</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">5</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">&raquo;</a>
+                  </li>
+                </ul>
+              </div>
 
-              <ul class="pagination pagination-sm">
-                <li class="disabled"><a href="#">&laquo;</a></li>
-                <li class="active"><a href="#">1</a></li>
-                <li><a href="#">2</a></li>
-                <li><a href="#">3</a></li>
-                <li><a href="#">4</a></li>
-                <li><a href="#">5</a></li>
-                <li><a href="#">&raquo;</a></li>
-              </ul>
+              <div>
+                <ul class="pagination pagination-sm">
+                  <li class="page-item disabled">
+                    <a class="page-link" href="#">&laquo;</a>
+                  </li>
+                  <li class="page-item active">
+                    <a class="page-link" href="#">1</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">2</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">3</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">4</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">5</a>
+                  </li>
+                  <li class="page-item">
+                    <a class="page-link" href="#">&raquo;</a>
+                  </li>
+                </ul>
+              </div>
+
             </div>
-          </div>
-          <div class="col-lg-4">
-            <h2 id="pager">Pager</h2>
-            <div class="bs-component">
-              <ul class="pager">
-                <li><a href="#">Previous</a></li>
-                <li><a href="#">Next</a></li>
-              </ul>
-
-              <ul class="pager">
-                <li class="previous disabled"><a href="#">&larr; Older</a></li>
-                <li class="next"><a href="#">Newer &rarr;</a></li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-lg-4">
-
           </div>
         </div>
       </div>
@@ -873,99 +926,92 @@
             </div>
           </div>
         </div>
-        <div class="row">
-          <div class="col-lg-4">
-            <h2>Labels</h2>
-            <div class="bs-component" style="margin-bottom: 40px;">
-              <span class="label label-default">Default</span>
-              <span class="label label-primary">Primary</span>
-              <span class="label label-success">Success</span>
-              <span class="label label-warning">Warning</span>
-              <span class="label label-danger">Danger</span>
-              <span class="label label-info">Info</span>
-            </div>
+        <div>
+          <h2>Badges</h2>
+          <div class="bs-component" style="margin-bottom: 40px;">
+            <span class="badge badge-default">Default</span>
+            <span class="badge badge-primary">Primary</span>
+            <span class="badge badge-success">Success</span>
+            <span class="badge badge-warning">Warning</span>
+            <span class="badge badge-danger">Danger</span>
+            <span class="badge badge-info">Info</span>
           </div>
-          <div class="col-lg-4">
-            <h2>Badges</h2>
-            <div class="bs-component">
-              <ul class="nav nav-pills">
-                <li class="active"><a href="#">Home <span class="badge">42</span></a></li>
-                <li><a href="#">Profile <span class="badge"></span></a></li>
-                <li><a href="#">Messages <span class="badge">3</span></a></li>
-              </ul>
-            </div>
+          <div class="bs-component">
+            <span class="badge badge-pill badge-default">Default</span>
+            <span class="badge badge-pill badge-primary">Primary</span>
+            <span class="badge badge-pill badge-success">Success</span>
+            <span class="badge badge-pill badge-warning">Warning</span>
+            <span class="badge badge-pill badge-danger">Danger</span>
+            <span class="badge badge-pill badge-info">Info</span>
           </div>
         </div>
       </div>
 
-      <!-- Progress bars
+      <!-- Progress
       ================================================== -->
       <div class="bs-docs-section">
 
         <div class="row">
           <div class="col-lg-12">
             <div class="page-header">
-              <h1 id="progress">Progress bars</h1>
+              <h1 id="progress">Progress</h1>
             </div>
 
             <h3 id="progress-basic">Basic</h3>
             <div class="bs-component">
               <div class="progress">
-                <div class="progress-bar" style="width: 60%;"></div>
+                <div class="progress-bar" role="progressbar" style="width: 25%; height: 20px;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <h3 id="progress-alternatives">Contextual alternatives</h3>
             <div class="bs-component">
               <div class="progress">
-                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+                <div class="progress-bar bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-
               <div class="progress">
-                <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-
               <div class="progress">
-                <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+                <div class="progress-bar bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-
               <div class="progress">
-                <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+                <div class="progress-bar bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+            </div>
+
+            <h3 id="progress-multiple">Multiple bars</h3>
+            <div class="bs-component">
+              <div class="progress">
+                <div class="progress-bar" role="progressbar" style="width: 15%" aria-valuenow="15" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-success" role="progressbar" style="width: 30%" aria-valuenow="30" aria-valuemin="0" aria-valuemax="100"></div>
+                <div class="progress-bar bg-info" role="progressbar" style="width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <h3 id="progress-striped">Striped</h3>
             <div class="bs-component">
-              <div class="progress progress-striped">
-                <div class="progress-bar progress-bar-info" style="width: 20%"></div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped" role="progressbar" style="width: 10%" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-
-              <div class="progress progress-striped">
-                <div class="progress-bar progress-bar-success" style="width: 40%"></div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-success" role="progressbar" style="width: 25%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-
-              <div class="progress progress-striped">
-                <div class="progress-bar progress-bar-warning" style="width: 60%"></div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
-
-              <div class="progress progress-striped">
-                <div class="progress-bar progress-bar-danger" style="width: 80%"></div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-warning" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+              </div>
+              <div class="progress">
+                <div class="progress-bar progress-bar-striped bg-danger" role="progressbar" style="width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100"></div>
               </div>
             </div>
 
             <h3 id="progress-animated">Animated</h3>
             <div class="bs-component">
-              <div class="progress progress-striped active">
-                <div class="progress-bar" style="width: 45%"></div>
-              </div>
-            </div>
-
-            <h3 id="progress-stacked">Stacked</h3>
-            <div class="bs-component">
               <div class="progress">
-                <div class="progress-bar progress-bar-success" style="width: 35%"></div>
-                <div class="progress-bar progress-bar-warning" style="width: 20%"></div>
-                <div class="progress-bar progress-bar-danger" style="width: 10%"></div>
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
               </div>
             </div>
           </div>
@@ -979,13 +1025,13 @@
         <div class="row">
           <div class="col-lg-12">
             <div class="page-header">
-              <h1 id="container">Containers</h1>
+              <h1 id="containers">Containers</h1>
             </div>
             <div class="bs-component">
               <div class="jumbotron">
-                <h1>Jumbotron</h1>
+                <h1 class="display-3">Jumbotron</h1>
                 <p>This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
-                <p><a class="btn btn-primary btn-lg">Learn more</a></p>
+                <p><a class="btn btn-primary btn-lg" href="#">Learn more</a></p>
               </div>
             </div>
           </div>
@@ -997,20 +1043,21 @@
             <h2>List groups</h2>
           </div>
         </div>
+
         <div class="row">
           <div class="col-lg-4">
             <div class="bs-component">
               <ul class="list-group">
                 <li class="list-group-item">
-                  <span class="badge">14</span>
+                  <span class="tag tag-default tag-pill float-xs-right">14</span>
                   Cras justo odio
                 </li>
                 <li class="list-group-item">
-                  <span class="badge">2</span>
+                  <span class="tag tag-default tag-pill float-xs-right">2</span>
                   Dapibus ac facilisis in
                 </li>
                 <li class="list-group-item">
-                  <span class="badge">1</span>
+                  <span class="tag tag-default tag-pill float-xs-right">1</span>
                   Morbi leo risus
                 </li>
               </ul>
@@ -1019,12 +1066,12 @@
           <div class="col-lg-4">
             <div class="bs-component">
               <div class="list-group">
-                <a href="#" class="list-group-item active">
+                <a href="#" class="list-group-item  list-group-item-action active">
                   Cras justo odio
                 </a>
-                <a href="#" class="list-group-item">Dapibus ac facilisis in
+                <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in
                 </a>
-                <a href="#" class="list-group-item">Morbi leo risus
+                <a href="#" class="list-group-item list-group-item-action disabled">Morbi leo risus
                 </a>
               </div>
             </div>
@@ -1032,97 +1079,14 @@
           <div class="col-lg-4">
             <div class="bs-component">
               <div class="list-group">
-                <a href="#" class="list-group-item">
+                <a href="#" class="list-group-item list-group-item-action active">
                   <h4 class="list-group-item-heading">List group item heading</h4>
                   <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                 </a>
-                <a href="#" class="list-group-item">
+                <a href="#" class="list-group-item list-group-item-action">
                   <h4 class="list-group-item-heading">List group item heading</h4>
                   <p class="list-group-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
                 </a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-        <div class="row">
-          <div class="col-lg-12">
-            <h2>Panels</h2>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-lg-4">
-            <div class="bs-component">
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  Basic panel
-                </div>
-              </div>
-
-              <div class="panel panel-default">
-                <div class="panel-heading">Panel heading</div>
-                <div class="panel-body">
-                  Panel content
-                </div>
-              </div>
-
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  Panel content
-                </div>
-                <div class="panel-footer">Panel footer</div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="bs-component">
-              <div class="panel panel-primary">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Panel primary</h3>
-                </div>
-                <div class="panel-body">
-                  Panel content
-                </div>
-              </div>
-
-              <div class="panel panel-success">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Panel success</h3>
-                </div>
-                <div class="panel-body">
-                  Panel content
-                </div>
-              </div>
-
-              <div class="panel panel-warning">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Panel warning</h3>
-                </div>
-                <div class="panel-body">
-                  Panel content
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4">
-            <div class="bs-component">
-              <div class="panel panel-danger">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Panel danger</h3>
-                </div>
-                <div class="panel-body">
-                  Panel content
-                </div>
-              </div>
-
-              <div class="panel panel-info">
-                <div class="panel-heading">
-                  <h3 class="panel-title">Panel info</h3>
-                </div>
-                <div class="panel-body">
-                  Panel content
-                </div>
               </div>
             </div>
           </div>
@@ -1130,32 +1094,122 @@
 
         <div class="row">
           <div class="col-lg-12">
-            <h2>Wells</h2>
+            <h2>Cards</h2>
           </div>
         </div>
+
         <div class="row">
           <div class="col-lg-4">
             <div class="bs-component">
-              <div class="well">
-                Look, I'm in a well!
+              <div class="card card-inverse card-primary text-xs-center">
+                <div class="card-block">
+                  <blockquote class="card-blockquote">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+              <div class="card card-inverse card-success text-xs-center">
+                <div class="card-block">
+                  <blockquote class="card-blockquote">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+              <div class="card card-inverse card-info text-xs-center">
+                <div class="card-block">
+                  <blockquote class="card-blockquote">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+              <div class="card card-inverse card-warning text-xs-center">
+                <div class="card-block">
+                  <blockquote class="card-blockquote">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+              <div class="card card-inverse card-danger text-xs-center">
+                <div class="card-block">
+                  <blockquote class="card-blockquote">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  </blockquote>
+                </div>
               </div>
             </div>
           </div>
           <div class="col-lg-4">
             <div class="bs-component">
-              <div class="well well-sm">
-                Look, I'm in a small well!
+              <div class="card card-outline-primary text-xs-center">
+                <div class="card-block">
+                  <blockquote class="card-blockquote">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+              <div class="card card-outline-success text-xs-center">
+                <div class="card-block">
+                  <blockquote class="card-blockquote">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+              <div class="card card-outline-info text-xs-center">
+                <div class="card-block">
+                  <blockquote class="card-blockquote">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+              <div class="card card-outline-warning text-xs-center">
+                <div class="card-block">
+                  <blockquote class="card-blockquote">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  </blockquote>
+                </div>
+              </div>
+              <div class="card card-outline-danger text-xs-center">
+                <div class="card-block">
+                  <blockquote class="card-blockquote">
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
+                    <footer>Someone famous in <cite title="Source Title">Source Title</cite></footer>
+                  </blockquote>
+                </div>
               </div>
             </div>
           </div>
+
           <div class="col-lg-4">
             <div class="bs-component">
-              <div class="well well-lg">
-                Look, I'm in a large well!
+              <div class="card">
+                <h3 class="card-header">Card header</h3>
+                <div class="card-block">
+                  <h5 class="card-title">Special title treatment</h5>
+                  <h6 class="card-subtitle text-muted">Support card subtitle</h6>
+                </div>
+                <img style="height: 200px; width: 100%; display: block;" src="data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%22318%22%20height%3D%22180%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20318%20180%22%20preserveAspectRatio%3D%22none%22%3E%3Cdefs%3E%3Cstyle%20type%3D%22text%2Fcss%22%3E%23holder_158bd1d28ef%20text%20%7B%20fill%3Argba(255%2C255%2C255%2C.75)%3Bfont-weight%3Anormal%3Bfont-family%3AHelvetica%2C%20monospace%3Bfont-size%3A16pt%20%7D%20%3C%2Fstyle%3E%3C%2Fdefs%3E%3Cg%20id%3D%22holder_158bd1d28ef%22%3E%3Crect%20width%3D%22318%22%20height%3D%22180%22%20fill%3D%22%23777%22%3E%3C%2Frect%3E%3Cg%3E%3Ctext%20x%3D%22129.359375%22%20y%3D%2297.35%22%3EImage%3C%2Ftext%3E%3C%2Fg%3E%3C%2Fg%3E%3C%2Fsvg%3E" alt="Card image">
+                <div class="card-block">
+                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                  <a href="#" class="card-link">Card link</a>
+                  <a href="#" class="card-link">Another link</a>
+                </div>
+                <div class="card-footer text-muted text-xs-center">
+                  2 days ago
+                </div>
               </div>
             </div>
           </div>
         </div>
+
       </div>
 
       <!-- Dialogs
@@ -1174,18 +1228,20 @@
             <h2>Modals</h2>
             <div class="bs-component">
               <div class="modal">
-                <div class="modal-dialog">
+                <div class="modal-dialog" role="document">
                   <div class="modal-content">
                     <div class="modal-header">
-                      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-                      <h4 class="modal-title">Modal title</h4>
+                      <h5 class="modal-title">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
                     </div>
                     <div class="modal-body">
-                      <p>One fine body…</p>
+                      <p>Modal body text goes here.</p>
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                       <button type="button" class="btn btn-primary">Save changes</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     </div>
                   </div>
                 </div>
@@ -1194,25 +1250,25 @@
           </div>
           <div class="col-lg-6">
             <h2>Popovers</h2>
-            <div class="bs-component">
-              <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Left</button>
+            <div class="bs-component" style="margin-bottom: 3em;">
+              <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body" data-toggle="popover" data-placement="left" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Left</button>
 
-              <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top</button>
+              <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body" data-toggle="popover" data-placement="top" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Top</button>
 
-              <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
+              <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body" data-toggle="popover" data-placement="bottom" data-content="Vivamus
               sagittis lacus vel augue laoreet rutrum faucibus.">Bottom</button>
 
-              <button type="button" class="btn btn-default" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Right</button>
+              <button type="button" class="btn btn-secondary" title="Popover Title" data-container="body" data-toggle="popover" data-placement="right" data-content="Vivamus sagittis lacus vel augue laoreet rutrum faucibus.">Right</button>
             </div>
             <h2>Tooltips</h2>
             <div class="bs-component">
-              <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="left" title="" data-original-title="Tooltip on left">Left</button>
+              <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Left</button>
 
-              <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="" data-original-title="Tooltip on top">Top</button>
+              <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="top" title="Tooltip on top">Top</button>
 
-              <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Tooltip on bottom">Bottom</button>
+              <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="bottom" title="Tooltip on bottom">Bottom</button>
 
-              <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="right" title="" data-original-title="Tooltip on right">Right</button>
+              <button type="button" class="btn btn-secondary" data-toggle="tooltip" data-placement="right" title="Tooltip on right">Right</button>
             </div>
           </div>
         </div>
@@ -1222,8 +1278,8 @@
         <div class="modal-dialog modal-lg">
           <div class="modal-content">
             <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
               <h4 class="modal-title">Source Code</h4>
+              <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
             </div>
             <div class="modal-body">
               <pre></pre>
@@ -1232,12 +1288,12 @@
         </div>
       </div>
 
-      <footer>
+      <footer id="footer">
         <div class="row">
           <div class="col-lg-12">
 
             <ul class="list-unstyled">
-              <li class="pull-right"><a href="#top">Back to top</a></li>
+              <li class="float-lg-right"><a href="#top">Back to top</a></li>
               <li><a href="http://news.bootswatch.com" onclick="pageTracker._link(this.href); return false;">Blog</a></li>
               <li><a href="http://feeds.feedburner.com/bootswatch">RSS</a></li>
               <li><a href="https://twitter.com/bootswatch">Twitter</a></li>
@@ -1245,9 +1301,9 @@
               <li><a href="../help/#api">API</a></li>
               <li><a href="../help/#support">Support</a></li>
             </ul>
-            <p>Made by <a href="http://thomaspark.co" rel="nofollow">Thomas Park</a>. Contact him at <a href="mailto:thomas@bootswatch.com">thomas@bootswatch.com</a>.</p>
+            <p>Made by <a href="http://thomaspark.co">Thomas Park</a>.</p>
             <p>Code released under the <a href="https://github.com/thomaspark/bootswatch/blob/gh-pages/LICENSE">MIT License</a>.</p>
-            <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fortawesome.github.io/Font-Awesome/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="http://www.google.com/webfonts" rel="nofollow">Google</a>.</p>
+            <p>Based on <a href="http://getbootstrap.com" rel="nofollow">Bootstrap</a>. Icons from <a href="http://fontawesome.io/" rel="nofollow">Font Awesome</a>. Web fonts from <a href="https://fonts.google.com/" rel="nofollow">Google</a>.</p>
 
           </div>
         </div>
@@ -1256,11 +1312,11 @@
 
 
     </div>
-  <body>
 
 
-    <script src="/assets/jquery/dist/jquery.js"></script>
-    <script src="/assets/bootstrap/dist/js/bootstrap.js"></script>
-    <script src="/assets/highlightjs/highlightjs.pack.js"></script>
+    <script src="../bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="../bower_components/tether/dist/js/tether.min.js"></script>
+    <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="../assets/js/custom.js"></script>
   </body>
 </html>
