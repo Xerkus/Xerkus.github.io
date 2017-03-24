@@ -1,17 +1,35 @@
 {
-    "name": "xerkus/blog",
-    "description": "Sculpin source for my blog",
-    "authors": [
-        {
-            "name": "Aleksey Khudyakov",
-            "email": "aleksey@xerkus.pro"
-        }
-    ],
-    "require": {
-        "sculpin/sculpin": "^2.1@dev",
-        "dflydev/embedded-composer": "^1.0@dev"
-    },
-    "config": {
-        "preferred-install": "dist"
+  "name": "xerkus/blog",
+  "description": "Sculpin source for my blog",
+  "authors": [
+    {
+      "name": "Aleksey Khudyakov",
+      "email": "aleksey@xerkus.pro"
     }
+  ],
+  "require": {
+    "sculpin/sculpin": "^3.0@dev"
+  },
+  "config": {
+    "preferred-install": "dist"
+  },
+  "scripts": {
+    "build": [
+      "@clean",
+      "sculpin generate --env=prod"
+    ],
+    "build-all": [
+      "@clean",
+      "@build-assets",
+      "@build"
+    ],
+    "build-assets": "FORCE_COLOR=true npm run assets-build",
+    "clean": [
+      "rm -rf ./output_dev",
+      "rm -rf ./output_prod"
+    ],
+    "deploy": [
+      "./deploy.sh"
+    ]
+  }
 }

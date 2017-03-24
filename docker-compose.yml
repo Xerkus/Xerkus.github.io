@@ -1,9 +1,0 @@
-version: '2'
-services:
-  assets:
-    build:
-      context: .
-      dockerfile: .compose/node.dockerfile
-    volumes:
-      - .:/node/app:z
-    command: ""

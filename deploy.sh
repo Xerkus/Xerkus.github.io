@@ -23,14 +23,9 @@ fi
 
 CURR_COMMIT=$(git rev-parse --short HEAD)
 
-rm -rf ./output_prod
-sudo UID=$UID docker-compose run gulp build
-./vendor/bin/sculpin generate --env=prod
-echo
-
 rm -rf ./.gh-pages-publish
-git clone https://github.com/Xerkus/Xerkus.github.io.git -b master --depth 1 \
-    ./.gh-pages-publish
+git fetch origin master:master
+git worktree add ./.gh-pages-publish master
 cd .gh-pages-publish
 
 rsync --quiet --archive \
@@ -39,14 +34,10 @@ rsync --quiet --archive \
 rm -rf ../output_prod
 
 git add -A :/
-# non-zero exit code on no changes, no new commit or pushing
-git commit -a -m "Deploying sculpin-generated pages at #$CURR_COMMIT"
-
-if [ "$1" == "push" ]
+if [ "$(git status --porcelain | wc -l)" -ne 0 ]
 then
-    git push origin master
-    echo "Done and pushed"
-    exit
+    git commit -m "Deploying sculpin-generated pages at #$CURR_COMMIT"
 fi
 
-echo "Done. Now cd to .gh-pages-publish, verify and push to origin master"
+git push origin master
+echo "Done and pushed"
